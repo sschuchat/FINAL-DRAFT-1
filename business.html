@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Structure — CivicCircle</title>
+  <meta name="description" content="The legal and business entity strategy behind CivicCircle — from initial LLC formation to corporation conversion for outside investment." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="business.css" />
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- NAVIGATION BAR (shared)                       -->
+  <!-- ============================================= -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand" aria-label="CivicCircle home">
+        <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 26 L8 20 L12 20 L12 14 L16 14 L16 22 L20 22 L20 10 L24 10 L24 18 L28 18 L28 24 L32 24 L32 26 Z" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">CivicCircle</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="startup.html">Startup</a></li>
+          <li><a href="marketing.html">Marketing</a></li>
+          <li><a href="name.html">Name</a></li>
+          <li><a href="business.html" aria-current="page">Business</a></li>
+          <li><a href="online.html">Online</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#cta-final" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================= -->
+    <!-- PAGE HERO — framed as a business report      -->
+    <!-- ============================================= -->
+    <section class="page-hero business-hero">
+      <div class="container">
+        <span class="section-kicker">Business Structure</span>
+        <h1>The Legal Architecture of CivicCircle</h1>
+        <p class="page-hero-lead">
+          Every startup is two things at once: a product and a legal entity. This report addresses the second. It explains why we are forming CivicCircle as a Limited Liability Company, how we will do it, how we will operate under it, and the conditions under which we will convert to a corporation to accept outside investment.
+        </p>
+        <dl class="report-meta">
+          <div><dt>Initial Entity Type</dt><dd>Limited Liability Company</dd></div>
+          <div><dt>State of Formation</dt><dd>Delaware</dd></div>
+          <div><dt>Future Conversion</dt><dd>Delaware C-Corporation</dd></div>
+          <div><dt>Members</dt><dd>Marujo · Schuchat · Vogel</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- TABLE OF CONTENTS                             -->
+    <!-- ============================================= -->
+    <section class="toc-section">
+      <div class="container">
+        <nav class="toc" aria-label="Page contents">
+          <h2 class="toc-title">Contents</h2>
+          <ol>
+            <li><a href="#identity">1. Company Identity</a></li>
+            <li><a href="#why-entity">2. Why Form an Entity</a></li>
+            <li><a href="#state">3. State of Formation</a></li>
+            <li><a href="#llc">4. The LLC</a></li>
+            <li><a href="#operating-agreement">5. Operating Agreement</a></li>
+            <li><a href="#corporation">6. Conversion to Corporation</a></li>
+            <li><a href="#bylaws">7. Corporate Bylaws</a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SECTION 1 — COMPANY IDENTITY                  -->
+    <!-- ============================================= -->
+    <section class="section" id="identity" aria-labelledby="identity-heading">
+      <div class="container">
+        <span class="section-kicker">Section 1</span>
+        <h2 id="identity-heading">Company Name &amp; Product Name</h2>
+        <p class="section-lead">
+          The first decision in forming a business entity is what to call it — and whether the company name will be the same as the product name.
+        </p>
+
+        <article class="report-block">
+          <h3>1.1 The Company Name</h3>
+          <p>
+            The company name, in its registered legal form, will be <strong>CivicCircle LLC</strong>. Upon conversion to a corporation, the name will become <strong>CivicCircle, Inc.</strong> The core identifier — "CivicCircle" — stays constant across both entity types. The only difference is the legal suffix required by state formation law.
+          </p>
+        </article>
+
+        <article class="report-block">
+          <h3>1.2 The Relationship Between Company Name and Product Name</h3>
+          <p>
+            We have made a deliberate choice to keep the company name and the product name identical. Our product is called CivicCircle, and our company is called CivicCircle LLC. This alignment is not universal in startup practice — Alphabet owns Google, Meta owns Instagram, and many ventures deliberately separate the holding entity from the consumer-facing brand. We considered this approach and rejected it for three reasons.
+          </p>
+          <p>
+            <strong>First, we are a single-product company for the foreseeable future.</strong> A separate holding-entity name makes sense when a company plans to acquire or launch multiple distinct brands. CivicCircle's product roadmap is deep, not wide — we plan to expand into more cities, not more products. A separate corporate name would add complexity without adding strategic flexibility.
+          </p>
+          <p>
+            <strong>Second, brand concentration is an asset at our stage.</strong> Every piece of earned media, every press mention, every user install, and every municipal reference builds equity in a single name. Splitting the company name from the product name would dilute that compounding effect — particularly in B2G sales, where a municipal buyer wants the company signing the contract to be recognizably the same as the product in the pitch.
+          </p>
+          <p>
+            <strong>Third, the name is already legally defensible.</strong> Our separate analysis of the "CivicCircle" mark (see the <a href="name.html">Name &amp; Trademark</a> page) indicates a strong likelihood of federal registration in International Class 41, as a suggestive mark. That protection applies regardless of entity type, which means we can convert from LLC to corporation without changing the brand and without losing any accumulated trademark value.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SECTION 2 — WHY FORM AN ENTITY                -->
+    <!-- ============================================= -->
+    <section class="section section-alt" id="why-entity" aria-labelledby="why-entity-heading">
+      <div class="container">
+        <span class="section-kicker">Section 2</span>
+        <h2 id="why-entity-heading">Why Form a Legal Entity at All</h2>
+        <p class="section-lead">
+          Before choosing between LLC and corporation, it is worth asking the more fundamental question: why form an entity at all, rather than simply operating as a three-person partnership?
+        </p>
+
+        <div class="reason-grid">
+          <article class="reason-card">
+            <div class="reason-num">01</div>
+            <h3>Limited Liability</h3>
+            <p>
+              Without an entity, the three founders are each personally liable for every contract, debt, and lawsuit the business incurs. If CivicCircle were sued by a municipality over a data-privacy incident, the plaintiffs could reach the founders' personal savings, homes, and future income. An entity creates a legal wall — the "corporate veil" — between business liability and personal assets. This is the single most important reason any founding team incorporates before taking on customers, contracts, or employees.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <div class="reason-num">02</div>
+            <h3>Contractual Clarity</h3>
+            <p>
+              Municipalities will not sign a $15,000 annual subscription with "three students." They sign with registered legal entities that can be audited, insured, and held accountable under contract. Forming a real entity is often the minimum legal requirement for doing business with governmental customers — and it is table stakes for doing business with any sophisticated counterparty.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <div class="reason-num">03</div>
+            <h3>Ownership &amp; Equity Structure</h3>
+            <p>
+              An entity is the container in which ownership is defined, documented, and transferred. Without it, founder equity is an informal handshake — which works until it doesn't. The first time a founder leaves, a team member is hired with equity compensation, or an investor writes a check, the founders will need a legal entity that can issue and track ownership interests.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <div class="reason-num">04</div>
+            <h3>Tax Treatment &amp; Financial Hygiene</h3>
+            <p>
+              An entity creates a separate tax identity (EIN), enables proper business banking, allows deductible business expenses, and separates the company's financial history from the founders' personal returns. It also protects future investors, who will not invest in an entity that has been commingling personal and business funds.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <div class="reason-num">05</div>
+            <h3>Continuity &amp; Transferability</h3>
+            <p>
+              A legal entity exists independent of its founders. If one of the three members leaves, is bought out, or dies, the entity continues. The business does not have to be reconstituted each time its membership changes — a property critical to any venture hoping to outlast its initial team.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <div class="reason-num">06</div>
+            <h3>Credibility with Partners</h3>
+            <p>
+              Every one of our key partners — software development firms, data partners like Meta, ticketing platforms, venues — requires a registered counterparty before they will sign an API agreement or partnership contract. The entity is a prerequisite to doing business with anyone who doesn't already know us personally.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SECTION 3 — STATE OF FORMATION                -->
+    <!-- ============================================= -->
+    <section class="section" id="state" aria-labelledby="state-heading">
+      <div class="container">
+        <span class="section-kicker">Section 3</span>
+        <h2 id="state-heading">State of Formation &amp; Name Availability</h2>
+        <p class="section-lead">
+          A company does not have to be formed in the state where its founders live or operate. The choice of formation state is a strategic decision with long-term consequences.
+        </p>
+
+        <article class="report-block">
+          <h3>3.1 Why Delaware</h3>
+          <p>
+            We will form CivicCircle LLC in the <strong>State of Delaware</strong>. The team is based in Louisiana and will most likely run the company's operations out of New Orleans, but Delaware is our state of legal formation.
+          </p>
+          <p>
+            Delaware is the overwhelming default state for venture-backed startups in the United States. More than two-thirds of Fortune 500 companies and a supermajority of venture-backed startups are incorporated there. The reasons are specific and compounding:
+          </p>
+
+          <div class="delaware-grid">
+            <div class="delaware-card">
+              <h4>Specialized Court System</h4>
+              <p>Delaware's Court of Chancery handles only business disputes and is staffed by judges — not juries — with decades of specialized business-law expertise. This produces faster, more predictable outcomes in disputes that matter to investors.</p>
+            </div>
+            <div class="delaware-card">
+              <h4>Well-Developed Case Law</h4>
+              <p>Delaware has the largest and most-cited body of corporate and LLC case law in the country. Founders and investors can predict how courts will rule on governance questions — a rarity in other states.</p>
+            </div>
+            <div class="delaware-card">
+              <h4>Investor Familiarity</h4>
+              <p>Venture capital firms expect Delaware entities. A company formed elsewhere will often be asked to re-domicile to Delaware as a condition of investment — a cost we would rather avoid by forming correctly the first time.</p>
+            </div>
+            <div class="delaware-card">
+              <h4>Formation Flexibility</h4>
+              <p>Delaware's LLC Act is widely considered the most flexible in the country, allowing operating agreements to customize nearly every aspect of internal governance. This fits an early-stage, evolving company.</p>
+            </div>
+          </div>
+
+          <p class="foreign-qualification-note">
+            <strong>Note on foreign qualification:</strong> because we will operate out of Louisiana, CivicCircle LLC will also need to register as a "foreign entity" doing business in Louisiana, which involves filing an application for authority with the Louisiana Secretary of State. This does not change the company's legal home — it simply grants permission to transact business in a second state.
+          </p>
+        </article>
+
+        <article class="report-block">
+          <h3>3.2 Checking Name Availability</h3>
+          <p>
+            Before filing any formation documents, we must confirm that "CivicCircle" is available as a business name in our state of formation. The availability check is a three-layer process. No single one of these is sufficient on its own.
+          </p>
+
+          <ol class="process-list">
+            <li>
+              <strong>Delaware Division of Corporations name search.</strong> The first check is the state's online entity name database, maintained by the Delaware Division of Corporations. This tells us whether any existing Delaware entity already holds the exact name or a name that is "not distinguishable" from ours. If the name is clear, we can reserve it for a small fee for up to 120 days while we complete our formation paperwork.
+            </li>
+            <li>
+              <strong>USPTO TESS search.</strong> State entity-name availability is not the same as federal trademark availability. We separately search the United States Patent and Trademark Office's Trademark Electronic Search System (TESS) to ensure that no existing federally-registered mark in our International Class (Class 41, education and entertainment services) would conflict with "CivicCircle." Our preliminary analysis has found no conflicting mark — the only adjacent mark with a circular logo is Target Corporation, which operates in entirely unrelated classes.
+            </li>
+            <li>
+              <strong>Domain and social handle availability.</strong> A legally available name is useless if the corresponding <code>.com</code> domain and primary social handles are unavailable. We have confirmed that <code>civiccircle.com</code>, Instagram handle <code>@civiccircle</code>, and Facebook page <code>@civiccircle</code> are all available and have been reserved.
+            </li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SECTION 4 — THE LLC                           -->
+    <!-- ============================================= -->
+    <section class="section section-alt" id="llc" aria-labelledby="llc-heading">
+      <div class="container">
+        <span class="section-kicker">Section 4</span>
+        <h2 id="llc-heading">The Limited Liability Company</h2>
+        <p class="section-lead">
+          We are forming CivicCircle as a Limited Liability Company. This section explains why — and how.
+        </p>
+
+        <!-- Why LLC vs Corp -->
+        <article class="report-block">
+          <h3>4.1 Why LLC Rather Than Corporation (at Launch)</h3>
+          <p>
+            At this stage — three founders, no outside capital, pre-revenue — the Limited Liability Company offers a cleaner fit than a corporation for six specific reasons.
+          </p>
+
+          <div class="comparison-table-wrap">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Dimension</th>
+                  <th>LLC (our choice)</th>
+                  <th>C-Corporation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Taxation</th>
+                  <td>Pass-through by default. Profits and losses flow directly to the founders' personal tax returns — no entity-level tax.</td>
+                  <td>Double taxation: corporate income is taxed at the entity level, and dividends are taxed again at the shareholder level.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Early Losses</th>
+                  <td>Pass-through losses can offset founders' other income during the pre-revenue phase.</td>
+                  <td>Losses stay locked inside the corporation until profits arrive.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Governance</th>
+                  <td>Highly flexible — the operating agreement defines nearly everything. No required board, no required annual meetings, minimal formalities.</td>
+                  <td>Rigid — bylaws, annual meetings, a board of directors, shareholder votes, and corporate minutes are mandatory.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ownership Structure</th>
+                  <td>Membership interests. Can be allocated however the members agree — equal, tiered, or fully custom.</td>
+                  <td>Shares of stock. Requires formal authorization, issuance, and tracking.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Administrative Burden</th>
+                  <td>Low. One operating agreement plus annual state filings.</td>
+                  <td>High. Bylaws, board resolutions, stock ledgers, annual meetings, and formal minutes.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Fit for Early Stage</th>
+                  <td>Excellent — matches a small founding team's need for flexibility and simplicity.</td>
+                  <td>Premature — the rigidity is valuable only once outside capital, employees with equity, or a public-market path enters the picture.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            The LLC is not a permanent decision. It is the correct <em>first</em> decision. Section 6 explains the conditions under which we will convert.
+          </p>
+        </article>
+
+        <!-- Member roles -->
+        <article class="report-block">
+          <h3>4.2 Member Roles and Capacities</h3>
+          <p>
+            CivicCircle LLC will be a member-managed LLC with three founding members. Each member will serve in a specific operational capacity in addition to holding an ownership interest. Capacities are functional, not hierarchical — all three founders are equal equity members.
+          </p>
+
+          <div class="role-grid">
+            <div class="role-card">
+              <div class="role-avatar" aria-hidden="true">OM</div>
+              <h4>Olivia Marujo</h4>
+              <p class="role-title">Member &amp; Chief Operating Lead</p>
+              <ul class="tight-list">
+                <li>Partnership development with municipalities and venues</li>
+                <li>Operational execution across pilot markets</li>
+                <li>Legal and compliance coordination with outside counsel</li>
+              </ul>
+            </div>
+            <div class="role-card">
+              <div class="role-avatar" aria-hidden="true">SS</div>
+              <h4>Sander Schuchat</h4>
+              <p class="role-title">Member &amp; Chief Product Lead</p>
+              <ul class="tight-list">
+                <li>Product direction and user experience</li>
+                <li>Brand strategy and creative leadership</li>
+                <li>Content strategy across inbound marketing channels</li>
+              </ul>
+            </div>
+            <div class="role-card">
+              <div class="role-avatar" aria-hidden="true">HV</div>
+              <h4>Holden Vogel</h4>
+              <p class="role-title">Member &amp; Chief Commercial Lead</p>
+              <ul class="tight-list">
+                <li>B2G sales and municipal relationship management</li>
+                <li>Revenue operations and financial modeling</li>
+                <li>Investor relations (post-conversion)</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Formation process -->
+        <article class="report-block">
+          <h3>4.3 Formation — The Certificate of Formation</h3>
+          <p>
+            The document required to legally create a Delaware LLC is called the <strong>Certificate of Formation</strong>. This is the founding document — the one-page filing that brings the entity into legal existence.
+          </p>
+
+          <h4>What the Certificate of Formation Contains</h4>
+          <p>
+            Delaware's Certificate of Formation is intentionally minimal. Only three pieces of information are required: the name of the limited liability company, the name and address of its registered agent in Delaware, and the signature of the authorized person forming the entity. Additional provisions may be included, but they are optional.
+          </p>
+
+          <h4>The Filing Process</h4>
+          <ol class="numbered-list">
+            <li><strong>Name reservation</strong> with the Delaware Division of Corporations (optional but recommended).</li>
+            <li><strong>Appointment of a registered agent</strong> — a person or service with a physical address in Delaware who is authorized to receive legal process on the company's behalf. Because no member of the team lives in Delaware, we will retain a commercial registered agent service.</li>
+            <li><strong>Filing the Certificate of Formation</strong> with the Delaware Division of Corporations, accompanied by the filing fee.</li>
+            <li><strong>Obtaining an Employer Identification Number (EIN)</strong> from the Internal Revenue Service — free of charge.</li>
+            <li><strong>Foreign qualification</strong> in Louisiana so the entity can legally transact business there.</li>
+            <li><strong>Opening a business bank account</strong> in the company's name using the EIN and the filed Certificate of Formation.</li>
+          </ol>
+          <p>
+            Once these six steps are complete, CivicCircle LLC legally exists, has a tax identity, can sign contracts, and can transact business in both its state of formation and its state of operations.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SECTION 5 — OPERATING AGREEMENT               -->
+    <!-- ============================================= -->
+    <section class="section" id="operating-agreement" aria-labelledby="oa-heading">
+      <div class="container">
+        <span class="section-kicker">Section 5</span>
+        <h2 id="oa-heading">The Operating Agreement</h2>
+        <p class="section-lead">
+          The Certificate of Formation creates the entity. The Operating Agreement defines how it runs. Of the two documents, the Operating Agreement is substantively the more important one — it is the constitution of the company.
+        </p>
+
+        <article class="report-block">
+          <h3>5.1 What It Is and Who Creates It</h3>
+          <p>
+            After the Certificate of Formation is filed and the LLC is legally recognized, the members of the LLC create a separate internal document called an <strong>Operating Agreement</strong>. Unlike the Certificate, the Operating Agreement is not filed with the state. It is a private contract <em>among the members themselves</em>, governing how the company is owned, managed, and maintained over time.
+          </p>
+          <p>
+            <strong>Who creates it:</strong> the members of the LLC — in our case, Olivia Marujo, Sander Schuchat, and Holden Vogel. All three members negotiate, draft, review, and sign it together, typically with outside legal counsel. An operating agreement signed by fewer than all members is not valid; every member must consent to the terms under which the entity operates.
+          </p>
+          <p>
+            Delaware does not legally require an LLC to have an Operating Agreement. But to operate without one is to leave the rules of the company entirely to the state's default statutory provisions — which may not reflect what the founders actually want. Every serious founding team drafts one.
+          </p>
+        </article>
+
+        <article class="report-block">
+          <h3>5.2 Provisions We Will Include</h3>
+          <p>
+            A well-drafted Operating Agreement for a multi-member LLC includes the following provisions at minimum. Each addresses a specific dispute, ambiguity, or governance question that will almost certainly arise over the life of the company.
+          </p>
+
+          <div class="provision-grid">
+            <article class="provision-card">
+              <div class="provision-label">01</div>
+              <h4>Formation &amp; Identification</h4>
+              <p>
+                States the entity's legal name, state of formation, registered agent, principal place of business, and stated business purpose.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">02</div>
+              <h4>Members &amp; Capital Contributions</h4>
+              <p>
+                Identifies each founding member, the specific capital contribution each has made (cash, intellectual property, time), and the membership interest percentage each receives in return.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">03</div>
+              <h4>Profit, Loss &amp; Distributions</h4>
+              <p>
+                Specifies how profits and losses are allocated among the members, and the conditions under which cash distributions may be made. Default pro-rata is most common at founding.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">04</div>
+              <h4>Management Structure</h4>
+              <p>
+                Designates whether the LLC is member-managed (all members participate) or manager-managed (managers are appointed). CivicCircle will be member-managed at founding.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">05</div>
+              <h4>Voting Rights &amp; Decision-Making</h4>
+              <p>
+                Defines which decisions require unanimous consent (e.g., admission of a new member, dissolution), which require a majority, and how votes are weighted — typically in proportion to membership interest.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">06</div>
+              <h4>Transfer Restrictions</h4>
+              <p>
+                Restricts when and how a member can sell or transfer their membership interest. Most early-stage LLCs require unanimous approval of the remaining members before any transfer.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">07</div>
+              <h4>Admission &amp; Withdrawal of Members</h4>
+              <p>
+                Defines the conditions and process for adding a new member (e.g., a future co-founder or equity hire) and for a member leaving — voluntarily or otherwise.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">08</div>
+              <h4>Buy-Sell Provisions</h4>
+              <p>
+                Addresses "what happens if" scenarios: a member dies, becomes disabled, divorces, files for bankruptcy, or wants out. Pre-agreed valuation formulas prevent future disputes.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">09</div>
+              <h4>Dispute Resolution</h4>
+              <p>
+                Requires disputes among members to go through mediation or arbitration before litigation — protecting the company from expensive public disputes.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">10</div>
+              <h4>Dissolution &amp; Winding Up</h4>
+              <p>
+                Sets out the process for dissolving the company, paying off creditors, and distributing any remaining assets to the members.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">11</div>
+              <h4>Confidentiality &amp; IP Assignment</h4>
+              <p>
+                Ensures any intellectual property created by a member in connection with CivicCircle is owned by the LLC, not the individual — critical for investor readiness.
+              </p>
+            </article>
+            <article class="provision-card">
+              <div class="provision-label">12</div>
+              <h4>Amendment Procedure</h4>
+              <p>
+                Specifies how the Operating Agreement itself can be changed over time — typically requiring unanimous or supermajority member approval.
+              </p>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SECTION 6 — CONVERSION TO CORPORATION         -->
+    <!-- ============================================= -->
+    <section class="section section-alt" id="corporation" aria-labelledby="corp-heading">
+      <div class="container">
+        <span class="section-kicker">Section 6</span>
+        <h2 id="corp-heading">Conversion to a Corporation</h2>
+        <p class="section-lead">
+          The LLC is the correct first entity. It is almost certainly not the correct final entity. This section explains when and why we will convert to a corporation — and how.
+        </p>
+
+        <article class="report-block">
+          <h3>6.1 Why a Corporation Is Better for Raising Outside Capital</h3>
+          <p>
+            The moment CivicCircle seeks outside investment capital — a seed round, a venture round, or a strategic investment — the LLC structure becomes a liability rather than an asset. There are five reasons a corporation is the preferred entity type for institutional investors.
+          </p>
+
+          <div class="corp-benefits">
+            <div class="corp-benefit">
+              <div class="corp-benefit-num">01</div>
+              <div>
+                <h4>Standardized Stock Structure</h4>
+                <p>
+                  Corporations issue shares of stock — a universally-recognized and well-defined ownership unit. LLC membership interests are customizable but non-standard, which means every investment deal requires bespoke legal work. Venture capital firms have spent decades standardizing their paperwork around corporate stock. Asking them to invest in an LLC is asking them to depart from a system that exists for their protection and efficiency.
+                </p>
+              </div>
+            </div>
+            <div class="corp-benefit">
+              <div class="corp-benefit-num">02</div>
+              <div>
+                <h4>Preferred Stock</h4>
+                <p>
+                  Institutional investors almost always require preferred stock — a class of equity with economic and governance rights superior to the common stock held by founders. Preferred stock is a corporate-law concept that does not translate cleanly into the LLC framework. An LLC would have to approximate it through complex membership-class structures that courts have less experience interpreting.
+                </p>
+              </div>
+            </div>
+            <div class="corp-benefit">
+              <div class="corp-benefit-num">03</div>
+              <div>
+                <h4>Tax Treatment of Investors</h4>
+                <p>
+                  LLCs are pass-through by default, which means LLC investors receive a K-1 tax form and owe tax on the company's income whether or not any money is distributed to them. Many institutional investors, including most pension funds and endowments, cannot accept pass-through tax treatment. A corporation is a separate taxpayer, insulating its investors from this issue.
+                </p>
+              </div>
+            </div>
+            <div class="corp-benefit">
+              <div class="corp-benefit-num">04</div>
+              <div>
+                <h4>Equity Compensation</h4>
+                <p>
+                  Corporations can issue stock options to employees under well-established tax rules (Incentive Stock Options, for example). LLCs cannot issue equivalent instruments without complex profits-interest arrangements that many engineers and early hires will not accept. If we want to recruit top talent using equity, a corporation is the only clean path.
+                </p>
+              </div>
+            </div>
+            <div class="corp-benefit">
+              <div class="corp-benefit-num">05</div>
+              <div>
+                <h4>Exit Pathways</h4>
+                <p>
+                  Initial public offerings and most major acquisitions are structured around corporate stock. An LLC is effectively closed out of the IPO market and creates friction in most M&amp;A transactions. Investors underwriting a venture are underwriting a future exit; the corporate form preserves the full range of exits available.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="report-block">
+          <h3>6.2 Formation — The Certificate of Incorporation</h3>
+          <p>
+            To form a corporation in Delaware, the document we would file is the <strong>Certificate of Incorporation</strong> (sometimes called the "Articles of Incorporation" in other states). Like the Certificate of Formation for an LLC, it is filed with the Delaware Division of Corporations.
+          </p>
+          <p>
+            The Certificate of Incorporation is substantively richer than an LLC's Certificate of Formation. It must include: the corporation's name, the name and address of its registered agent in Delaware, the total number of shares the corporation is authorized to issue, the par value of those shares (if any), and the name and address of the incorporator. For a venture intending to raise capital, it will also typically specify multiple classes of stock (common and preferred) and the rights, preferences, and privileges of each.
+          </p>
+          <p>
+            When CivicCircle converts from LLC to corporation, the process is typically executed as a <em>statutory conversion</em> in Delaware — a single filing that transforms the existing entity from an LLC into a corporation without the need to dissolve one and form another. All existing contracts, assets, liabilities, and intellectual property remain with the entity throughout the conversion.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SECTION 7 — BYLAWS                            -->
+    <!-- ============================================= -->
+    <section class="section" id="bylaws" aria-labelledby="bylaws-heading">
+      <div class="container">
+        <span class="section-kicker">Section 7</span>
+        <h2 id="bylaws-heading">Corporate Bylaws</h2>
+        <p class="section-lead">
+          The Certificate of Incorporation creates the corporation. The Bylaws define how it runs. The structural relationship between the two is nearly identical to the Certificate of Formation / Operating Agreement pair for an LLC — one creates the entity, the other governs it.
+        </p>
+
+        <article class="report-block">
+          <h3>7.1 What Bylaws Are and Who Creates Them</h3>
+          <p>
+            After the Certificate of Incorporation is filed and the corporation legally exists, the corporation's internal operating document is called its <strong>Bylaws</strong>. Like the Operating Agreement for an LLC, Bylaws are not filed with the state — they are an internal governance document.
+          </p>
+          <p>
+            <strong>Who creates them:</strong> the initial Bylaws of a Delaware corporation are typically drafted and adopted by the <em>incorporator</em> — the person named in the Certificate of Incorporation as the entity's formal founder. In practice, the incorporator is often the corporation's outside counsel, acting on instructions from the founding team.
+          </p>
+          <p>
+            <strong>Who must ratify them:</strong> once the corporation is formed, the initial Bylaws are ratified by the <strong>Board of Directors</strong> at the board's organizational meeting — the first formal meeting of the board after incorporation. The stockholders may also have the power to adopt, amend, or repeal Bylaws, depending on the language in the Certificate of Incorporation. In the standard Delaware corporation, both the board and the stockholders have authority over the Bylaws, but the board acts on them more frequently.
+          </p>
+        </article>
+
+        <article class="report-block">
+          <h3>7.2 Important Bylaw Provisions</h3>
+          <p>
+            Bylaws cover the detailed internal operation of a corporation. The most important provisions address questions of governance that will arise in the ordinary course of business and in moments of crisis alike.
+          </p>
+
+          <div class="bylaw-grid">
+            <div class="bylaw-card">
+              <h4>Stockholder Meetings</h4>
+              <p>When and where annual meetings of stockholders must be held, how special meetings may be called, notice requirements, quorum rules, and voting procedures.</p>
+            </div>
+            <div class="bylaw-card">
+              <h4>Board of Directors</h4>
+              <p>The authorized size of the board, how directors are elected, the length of their terms, how vacancies are filled, and how directors may be removed.</p>
+            </div>
+            <div class="bylaw-card">
+              <h4>Board Meetings &amp; Voting</h4>
+              <p>How regular and special board meetings are called, notice and quorum rules for the board, and what decisions require unanimous versus majority consent.</p>
+            </div>
+            <div class="bylaw-card">
+              <h4>Officer Roles</h4>
+              <p>Which officer positions the corporation will have (e.g., Chief Executive Officer, President, Treasurer, Secretary), how officers are appointed, and what authority each role carries.</p>
+            </div>
+            <div class="bylaw-card">
+              <h4>Stock Issuance &amp; Transfer</h4>
+              <p>How the corporation issues new shares, what form stock certificates must take, and how share transfers are recorded in the stock ledger.</p>
+            </div>
+            <div class="bylaw-card">
+              <h4>Committees of the Board</h4>
+              <p>Authority for the board to establish committees (audit, compensation, nominating) and the scope of authority that may be delegated to them.</p>
+            </div>
+            <div class="bylaw-card">
+              <h4>Indemnification</h4>
+              <p>The extent to which the corporation will indemnify directors and officers for legal liability incurred while acting in their corporate capacity — critical for recruiting qualified board members.</p>
+            </div>
+            <div class="bylaw-card">
+              <h4>Fiscal Year &amp; Corporate Records</h4>
+              <p>The corporation's fiscal year, and the requirement to keep stockholder lists, meeting minutes, the stock ledger, and the Bylaws themselves in the corporation's official records.</p>
+            </div>
+            <div class="bylaw-card">
+              <h4>Amendment Procedure</h4>
+              <p>How the Bylaws themselves may be changed — typically by board action, with certain amendments requiring stockholder approval.</p>
+            </div>
+          </div>
+
+          <p class="closing-note">
+            Taken together, the Certificate of Incorporation and the Bylaws form the complete governance architecture of a corporation, in the same way that the Certificate of Formation and the Operating Agreement form the governance architecture of an LLC. The LLC-to-corporation conversion, when it happens, is not a rebuilding of the business — it is a translation of the same underlying company into a legal form better suited to the next chapter.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- FINAL CTA                                     -->
+    <!-- ============================================= -->
+    <section class="section cta-final">
+      <div class="container cta-wrap">
+        <h2>Next: Our Online Presence</h2>
+        <p>A legally sound entity needs a digital footprint to match. See how CivicCircle shows up online.</p>
+        <div class="cta-buttons">
+          <a href="online.html" class="btn btn-primary btn-large">Online Presence →</a>
+          <a href="name.html" class="btn btn-ghost btn-large">Name &amp; Trademark</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================= -->
+  <!-- FOOTER (shared)                               -->
+  <!-- ============================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 26 L8 20 L12 20 L12 14 L16 14 L16 22 L20 22 L20 10 L24 10 L24 18 L28 18 L28 24 L32 24 L32 26 Z" fill="currentColor"/>
+          </svg>
+          <span class="brand-name">CivicCircle</span>
+        </div>
+        <p>One app for every local event. Built for communities. Made for neighbors.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="startup.html">Startup</a></li>
+          <li><a href="marketing.html">Marketing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="name.html">Name &amp; Brand</a></li>
+          <li><a href="business.html">Business Model</a></li>
+          <li><a href="online.html">Online Presence</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Instagram · @civiccircle</a></li>
+          <li><a href="#">Facebook · @civiccircle</a></li>
+          <li><a href="mailto:hello@civiccircle.com">hello@civiccircle.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CivicCircle. A Tulane University digital entrepreneurship project by Olivia Marujo, Sander Schuchat, and Holden Vogel.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

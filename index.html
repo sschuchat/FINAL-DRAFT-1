@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CivicCircle — One App for Every Local Event</title>
+  <meta name="description" content="CivicCircle centralizes every local event — from town halls to concerts — into one civic platform for communities and local governments." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- NAVIGATION BAR                                -->
+  <!-- Sticky top nav. Same markup on every page.    -->
+  <!-- ============================================= -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand" aria-label="CivicCircle home">
+        <!-- Inline SVG logo: skyline inside a circle (per trademark brief) -->
+        <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 26 L8 20 L12 20 L12 14 L16 14 L16 22 L20 22 L20 10 L24 10 L24 18 L28 18 L28 24 L32 24 L32 26 Z" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">CivicCircle</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="startup.html">Startup</a></li>
+          <li><a href="marketing.html">Marketing</a></li>
+          <li><a href="name.html">Name</a></li>
+          <li><a href="business.html">Business</a></li>
+          <li><a href="online.html">Online</a></li>
+        </ul>
+      </nav>
+
+      <a href="#cta-final" class="btn btn-primary nav-cta">Get Started</a>
+
+      <!-- Mobile menu toggle -->
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================= -->
+    <!-- HERO SECTION                                  -->
+    <!-- Product name, value prop, tagline, CTA        -->
+    <!-- ============================================= -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">For cities, towns, and the people who live in them</span>
+          <h1 id="hero-heading">
+            Your whole town,<br/>
+            <span class="accent">in one circle.</span>
+          </h1>
+          <p class="hero-sub">
+            CivicCircle is the single app where every local event lives — town halls, farmers markets, concerts, little league games, and everything in between. Built for municipalities. Made for neighbors.
+          </p>
+          <p class="hero-tagline">
+            Stop missing what's happening around you. Start showing up.
+          </p>
+          <div class="hero-ctas">
+            <a href="#cta-final" class="btn btn-primary">Get Started</a>
+            <a href="startup.html" class="btn btn-ghost">See the Story →</a>
+          </div>
+          <ul class="hero-stats" aria-label="At a glance">
+            <li><strong>1</strong><span>app for your town</span></li>
+            <li><strong>100%</strong><span>local events</span></li>
+            <li><strong>$0</strong><span>for residents</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Placeholder phone mockup -->
+          <div class="phone-mock">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="mock-header">CivicCircle</div>
+              <div class="mock-search">Search events near you</div>
+              <div class="mock-card mock-card-1">
+                <span class="mock-tag">Tonight</span>
+                <h4>Jazz in the Park</h4>
+                <p>7:00 PM · Audubon Park</p>
+              </div>
+              <div class="mock-card mock-card-2">
+                <span class="mock-tag mock-tag-civic">Civic</span>
+                <h4>City Council Meeting</h4>
+                <p>Thu 6:30 PM · City Hall</p>
+              </div>
+              <div class="mock-card mock-card-3">
+                <span class="mock-tag mock-tag-market">Market</span>
+                <h4>Crescent City Farmers Market</h4>
+                <p>Sat 8:00 AM · Magazine St</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- PROBLEM SECTION                               -->
+    <!-- Customer pain point                           -->
+    <!-- ============================================= -->
+    <section class="section problem" aria-labelledby="problem-heading">
+      <div class="container">
+        <span class="section-kicker">The Problem</span>
+        <h2 id="problem-heading">Your community is busy. You just can't find it.</h2>
+        <p class="section-lead">
+          Local events are scattered across Facebook groups, flyers on coffee shop corkboards, Eventbrite links buried in email, and city websites that haven't been updated since 2014. The result? Residents miss what's happening in their own neighborhood — and local governments lose one of their best tools for civic engagement.
+        </p>
+
+        <div class="pain-grid">
+          <article class="pain-card">
+            <div class="pain-icon" aria-hidden="true">🔍</div>
+            <h3>Fragmented information</h3>
+            <p>The average resident checks 4+ platforms to figure out what's happening this weekend. Most give up before they find it.</p>
+          </article>
+          <article class="pain-card">
+            <div class="pain-icon" aria-hidden="true">📉</div>
+            <h3>Low civic turnout</h3>
+            <p>Town halls, council meetings, and public forums go under-attended — not because people don't care, but because they never knew.</p>
+          </article>
+          <article class="pain-card">
+            <div class="pain-icon" aria-hidden="true">🏛️</div>
+            <h3>Cities have no central channel</h3>
+            <p>Municipalities rely on outdated websites and press releases to reach residents who live on their phones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SOLUTION SECTION                              -->
+    <!-- Product explanation                           -->
+    <!-- ============================================= -->
+    <section class="section solution" aria-labelledby="solution-heading">
+      <div class="container solution-grid">
+        <div class="solution-copy">
+          <span class="section-kicker">The Solution</span>
+          <h2 id="solution-heading">One app. Every event. Powered by your city.</h2>
+          <p>
+            CivicCircle partners directly with local municipalities to centralize every public and private event happening in town — then puts it in the pocket of every resident. Free for community members, subscription-based for cities, and designed from the ground up to make showing up easy.
+          </p>
+          <ul class="check-list">
+            <li>Unified calendar for civic, cultural, and commercial events</li>
+            <li>Built-in ticketing for concerts, sports, and paid experiences</li>
+            <li>Push notifications, SMS, and email for events you care about</li>
+            <li>Municipal dashboard for city staff to publish in seconds</li>
+          </ul>
+          <a href="startup.html" class="btn btn-secondary">How It Works →</a>
+        </div>
+        <div class="solution-visual">
+          <div class="feature-stack">
+            <div class="stack-card"><span>🎵</span>Concerts & festivals</div>
+            <div class="stack-card"><span>🥬</span>Farmers markets</div>
+            <div class="stack-card"><span>🏛️</span>Town halls</div>
+            <div class="stack-card"><span>⚽</span>Local sports</div>
+            <div class="stack-card"><span>🎨</span>Community arts</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- UNIQUE VALUE PROPOSITION                      -->
+    <!-- What makes us different                       -->
+    <!-- ============================================= -->
+    <section class="section uvp" aria-labelledby="uvp-heading">
+      <div class="container">
+        <span class="section-kicker">Why CivicCircle</span>
+        <h2 id="uvp-heading">Eventbrite is for events. CivicCircle is for <em>communities</em>.</h2>
+
+        <div class="uvp-table-wrap">
+          <table class="uvp-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>CivicCircle</th>
+                <th>Eventbrite</th>
+                <th>Facebook Events</th>
+                <th>City Websites</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Hyper-local focus</th>
+                <td class="yes">Yes</td>
+                <td>No</td>
+                <td>Partial</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">Civic + entertainment events together</th>
+                <td class="yes">Yes</td>
+                <td>No</td>
+                <td>No</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <th scope="row">Municipal partnership model</th>
+                <td class="yes">Yes</td>
+                <td>No</td>
+                <td>No</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <th scope="row">Built-in ticketing</th>
+                <td class="yes">Yes</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <th scope="row">Free for residents</th>
+                <td class="yes">Yes</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- TARGET CUSTOMER SECTION                       -->
+    <!-- Brief persona highlight                       -->
+    <!-- ============================================= -->
+    <section class="section personas" aria-labelledby="personas-heading">
+      <div class="container">
+        <span class="section-kicker">Who It's For</span>
+        <h2 id="personas-heading">Two customers. One platform.</h2>
+
+        <div class="persona-grid">
+          <article class="persona-card">
+            <div class="persona-avatar persona-avatar-civic" aria-hidden="true">🏛️</div>
+            <h3>Mayor Elena Torres</h3>
+            <p class="persona-role">City Communications Office · Population 85,000</p>
+            <blockquote>
+              "We spend thousands on a city website nobody visits. I need a direct line to residents that actually opens their phone."
+            </blockquote>
+            <ul class="persona-needs">
+              <li>Direct civic engagement channel</li>
+              <li>Measurable community participation</li>
+              <li>Simple tools for non-technical city staff</li>
+            </ul>
+          </article>
+
+          <article class="persona-card">
+            <div class="persona-avatar persona-avatar-resident" aria-hidden="true">🎶</div>
+            <h3>Marcus, 27</h3>
+            <p class="persona-role">New to town · Works downtown · Loves live music</p>
+            <blockquote>
+              "I moved here six months ago and still feel like I'm missing everything. I want to plug into my city without doom-scrolling for it."
+            </blockquote>
+            <ul class="persona-needs">
+              <li>One place to discover things to do</li>
+              <li>Seamless ticket purchase for paid events</li>
+              <li>Notifications for the stuff he actually cares about</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- FEATURES / BENEFITS                           -->
+    <!-- Tied to pain points, not just specs           -->
+    <!-- ============================================= -->
+    <section class="section features" aria-labelledby="features-heading">
+      <div class="container">
+        <span class="section-kicker">Features that Actually Matter</span>
+        <h2 id="features-heading">Every feature solves a real problem.</h2>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-num">01</div>
+            <h3>Unified Event Feed</h3>
+            <p class="feature-benefit">So you stop checking five apps.</p>
+            <p>A single scrollable feed surfaces every event in your city, filtered by interest, distance, and time.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-num">02</div>
+            <h3>Municipal Dashboard</h3>
+            <p class="feature-benefit">So city staff reach residents in minutes, not weeks.</p>
+            <p>Publish, edit, and broadcast civic events from one clean interface — no web developer required.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-num">03</div>
+            <h3>Smart Notifications</h3>
+            <p class="feature-benefit">So you never miss what you'd actually attend.</p>
+            <p>Opt in to categories and neighborhoods — get pushed only what matches.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-num">04</div>
+            <h3>In-App Ticketing</h3>
+            <p class="feature-benefit">So buying tickets doesn't mean five redirects.</p>
+            <p>Purchase tickets for paid events without leaving CivicCircle. Proceeds flow back into the local economy.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-num">05</div>
+            <h3>Civic Engagement Layer</h3>
+            <p class="feature-benefit">So democracy stops being homework.</p>
+            <p>Town halls, public comment windows, and local elections show up alongside concerts — not buried in PDFs.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-num">06</div>
+            <h3>Save, Share, Show Up</h3>
+            <p class="feature-benefit">So your plans become plans with people.</p>
+            <p>Save events, share with friends, sync to calendar, and RSVP — all in two taps.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SOCIAL PROOF / TESTIMONIALS (mock)            -->
+    <!-- ============================================= -->
+    <section class="section testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <span class="section-kicker">What People Are Saying</span>
+        <h2 id="testimonials-heading">Early adopters are showing up.</h2>
+
+        <div class="testimonial-grid">
+          <figure class="testimonial">
+            <blockquote>
+              "Our council meeting attendance tripled in the first quarter. CivicCircle did more for civic engagement than our website ever has."
+            </blockquote>
+            <figcaption>
+              <div class="avatar avatar-1" aria-hidden="true">JB</div>
+              <div>
+                <strong>Jordan Bell</strong>
+                <span>Communications Director, City of Ridgemont</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial">
+            <blockquote>
+              "I booked my whole weekend in the app on Friday morning. Farmers market, a local band I'd never heard of, and a neighborhood cleanup. Didn't touch Facebook once."
+            </blockquote>
+            <figcaption>
+              <div class="avatar avatar-2" aria-hidden="true">PS</div>
+              <div>
+                <strong>Priya S.</strong>
+                <span>Resident, New Orleans, LA</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial">
+            <blockquote>
+              "As a small venue, we went from flyers on lampposts to sold-out Tuesday nights. This is the local infrastructure we've been missing."
+            </blockquote>
+            <figcaption>
+              <div class="avatar avatar-3" aria-hidden="true">MC</div>
+              <div>
+                <strong>Marco Chen</strong>
+                <span>Owner, The Broadside Music Hall</span>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Logo strip placeholder -->
+        <div class="logo-strip" aria-label="Featured partners">
+          <span>Trusted by forward-thinking cities</span>
+          <div class="logo-strip-row">
+            <div class="logo-placeholder">CITY OF RIDGEMONT</div>
+            <div class="logo-placeholder">PORT HAVEN</div>
+            <div class="logo-placeholder">NEW HARBOR</div>
+            <div class="logo-placeholder">LAKESIDE MUNICIPAL</div>
+            <div class="logo-placeholder">OAKVILLE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- FINAL CALL TO ACTION                          -->
+    <!-- ============================================= -->
+    <section class="section cta-final" id="cta-final" aria-labelledby="cta-heading">
+      <div class="container cta-wrap">
+        <h2 id="cta-heading">Ready to put your city in a circle?</h2>
+        <p>Whether you run a city or live in one — CivicCircle was built for you. Join the beta, request a municipal pilot, or just get the app.</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary btn-large">Get Started</a>
+          <a href="business.html" class="btn btn-ghost btn-large">For Municipalities →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================= -->
+  <!-- FOOTER                                        -->
+  <!-- Shared across all pages                       -->
+  <!-- ============================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 26 L8 20 L12 20 L12 14 L16 14 L16 22 L20 22 L20 10 L24 10 L24 18 L28 18 L28 24 L32 24 L32 26 Z" fill="currentColor"/>
+          </svg>
+          <span class="brand-name">CivicCircle</span>
+        </div>
+        <p>One app for every local event. Built for communities. Made for neighbors.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="startup.html">Startup</a></li>
+          <li><a href="marketing.html">Marketing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="name.html">Name & Brand</a></li>
+          <li><a href="business.html">Business Model</a></li>
+          <li><a href="online.html">Online Presence</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Instagram · @civiccircle</a></li>
+          <li><a href="#">Facebook · @civiccircle</a></li>
+          <li><a href="mailto:hello@civiccircle.com">hello@civiccircle.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CivicCircle. A Tulane University digital entrepreneurship project by Olivia Marujo, Sander Schuchat, and Holden Vogel.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

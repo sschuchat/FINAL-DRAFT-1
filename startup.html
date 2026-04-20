@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup — CivicCircle</title>
+  <meta name="description" content="Full Business Model Canvas, customer validation plan, market risk analysis, and pricing strategy for the CivicCircle local events platform." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="startup.css" />
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- NAVIGATION BAR (shared across site)           -->
+  <!-- ============================================= -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand" aria-label="CivicCircle home">
+        <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 26 L8 20 L12 20 L12 14 L16 14 L16 22 L20 22 L20 10 L24 10 L24 18 L28 18 L28 24 L32 24 L32 26 Z" fill="currentColor"/>
+        </svg>
+        <span class="brand-name">CivicCircle</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="startup.html" aria-current="page">Startup</a></li>
+          <li><a href="marketing.html">Marketing</a></li>
+          <li><a href="name.html">Name</a></li>
+          <li><a href="business.html">Business</a></li>
+          <li><a href="online.html">Online</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#cta-final" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================= -->
+    <!-- PAGE HERO — introduces the report            -->
+    <!-- ============================================= -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-kicker">The Startup</span>
+        <h1>Building a Civic Layer for the Local Internet</h1>
+        <p class="page-hero-lead">
+          A complete analysis of CivicCircle's business model, customer validation strategy, and go-to-market plan. Structured around the Business Model Canvas (Osterwalder & Pigneur, 2010) and the three-risk startup framework: customer risk, market risk, and product risk.
+        </p>
+        <!-- Sticky report-style meta -->
+        <dl class="report-meta">
+          <div><dt>Venture</dt><dd>CivicCircle</dd></div>
+          <div><dt>Category</dt><dd>Civic Tech / B2G2C SaaS</dd></div>
+          <div><dt>Stage</dt><dd>Pre-MVP / Validation</dd></div>
+          <div><dt>Team</dt><dd>Marujo · Schuchat · Vogel</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- TABLE OF CONTENTS — jump nav                  -->
+    <!-- ============================================= -->
+    <section class="toc-section">
+      <div class="container">
+        <nav class="toc" aria-label="Page contents">
+          <h2 class="toc-title">Contents</h2>
+          <ol>
+            <li><a href="#bmc">1. Business Model Canvas</a></li>
+            <li><a href="#customer-risk">2. Customer Risk</a></li>
+            <li><a href="#validation">3. Validation Plan</a></li>
+            <li><a href="#market-risk">4. Market Risk</a></li>
+            <li><a href="#product-risk">5. Product Risk</a></li>
+            <li><a href="#cost-pricing">6. Cost & Pricing</a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 1. BUSINESS MODEL CANVAS                      -->
+    <!-- All 9 blocks, rendered as a grid              -->
+    <!-- ============================================= -->
+    <section class="section" id="bmc" aria-labelledby="bmc-heading">
+      <div class="container">
+        <span class="section-kicker">Section 1</span>
+        <h2 id="bmc-heading">The Business Model Canvas</h2>
+        <p class="section-lead">
+          Developed by Alexander Osterwalder, the Business Model Canvas is a one-page strategic framework that maps nine interdependent building blocks of a venture. Below, each block is applied to CivicCircle with specific commitments for how we plan to execute it.
+        </p>
+
+        <!-- Canvas grid layout -->
+        <div class="bmc-grid">
+
+          <div class="bmc-block bmc-partners">
+            <h3>Key Partners</h3>
+            <p class="bmc-question">Who are our suppliers and allies?</p>
+            <ul>
+              <li><strong>Local municipal governments</strong> — our paying customer and our primary content source for civic events.</li>
+              <li><strong>Venues &amp; hospitality groups</strong> — clubs, arenas, restaurants, and parks hosting live events.</li>
+              <li><strong>Music groups and festivals</strong> — including tentpole regional events like New Orleans Jazz Fest.</li>
+              <li><strong>Software development partner</strong> — for the build-out of the native app and municipal dashboard.</li>
+              <li><strong>Data partners</strong> — including Meta's Business API for event metadata and Eventbrite/Ticketmaster for ticketing feeds during early stages.</li>
+            </ul>
+          </div>
+
+          <div class="bmc-block bmc-activities">
+            <h3>Key Activities</h3>
+            <p class="bmc-question">What do we need to do every day?</p>
+            <ul>
+              <li>Pitching city and town governments on annual subscriptions.</li>
+              <li>Aggregating, cleaning, and publishing event data from multiple sources.</li>
+              <li>Maintaining the consumer app and the municipal dashboard.</li>
+              <li>Managing ticketing infrastructure (second iteration — in-house).</li>
+              <li>Community management, feedback loops, and feature prioritization.</li>
+            </ul>
+          </div>
+
+          <div class="bmc-block bmc-value">
+            <h3>Value Proposition</h3>
+            <p class="bmc-question">What problem do we solve?</p>
+            <div class="value-stack">
+              <div class="value-item">
+                <strong>For residents</strong>
+                <p>A single centralized location for every local event — concerts, farmers markets, town hall meetings, stadium events, and community gatherings — with free access and optional paid add-ons.</p>
+              </div>
+              <div class="value-item">
+                <strong>For municipalities</strong>
+                <p>A direct-to-resident civic engagement channel that lives on the phones residents already use, with measurable participation outcomes.</p>
+              </div>
+              <div class="value-item">
+                <strong>For venues &amp; event hosts</strong>
+                <p>Free hyper-local distribution to an opted-in, geographically-relevant audience.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bmc-block bmc-relations">
+            <h3>Customer Relationships</h3>
+            <p class="bmc-question">How do we interact with customers?</p>
+            <ul>
+              <li><strong>Acquisition:</strong> intuitive, low-friction UI that anyone can use without onboarding.</li>
+              <li><strong>Retention:</strong> open feedback channels, responsive iteration, and transparent roadmap.</li>
+              <li><strong>Growth:</strong> word of mouth and geographic expansion via municipal pitches.</li>
+              <li><strong>Municipal relationships:</strong> dedicated account manager model for contracted cities.</li>
+            </ul>
+          </div>
+
+          <div class="bmc-block bmc-segments">
+            <h3>Customer Segments</h3>
+            <p class="bmc-question">Who are we creating value for?</p>
+            <ul>
+              <li><strong>Primary paying customer:</strong> small-to-mid-size local governments.</li>
+              <li><strong>Primary end user:</strong> residents of those municipalities — particularly young professionals, families, and new arrivals.</li>
+              <li><strong>Secondary users:</strong> local venues, festivals, and event organizers.</li>
+              <li><strong>Tertiary:</strong> tourists and visitors looking for authentic local experiences.</li>
+            </ul>
+          </div>
+
+          <div class="bmc-block bmc-resources">
+            <h3>Key Resources</h3>
+            <p class="bmc-question">What do we need to operate?</p>
+            <ul>
+              <li><strong>Human:</strong> software developers, a UI/UX designer, a B2G sales lead, and a community manager.</li>
+              <li><strong>Technical:</strong> mobile app (iOS/Android), responsive web app, municipal CMS dashboard, and ticketing backend.</li>
+              <li><strong>Data:</strong> aggregated event feeds, municipal data partnerships, and user-generated content.</li>
+              <li><strong>Brand:</strong> the CivicCircle trademark and civic-trust positioning.</li>
+            </ul>
+          </div>
+
+          <div class="bmc-block bmc-channels">
+            <h3>Channels</h3>
+            <p class="bmc-question">How do we reach our customers?</p>
+            <ul>
+              <li><strong>For residents:</strong> iOS and Android app stores, the responsive web app, and integrated SMS / email / push notifications.</li>
+              <li><strong>For municipalities:</strong> direct sales pitches, civic tech conferences (e.g. Smart Cities, Code for America), and referral networks from existing city clients.</li>
+              <li><strong>For venues:</strong> partnership outreach and a self-serve event publishing portal.</li>
+            </ul>
+          </div>
+
+          <div class="bmc-block bmc-cost">
+            <h3>Cost Structure</h3>
+            <p class="bmc-question">What are our biggest expenses?</p>
+            <ul>
+              <li>Software development and ongoing engineering.</li>
+              <li>Hosting, cloud infrastructure, and third-party data APIs.</li>
+              <li>Advertising, marketing, and B2G sales.</li>
+              <li>Customer support and community management.</li>
+              <li>Ticketing infrastructure and payment processing (second iteration).</li>
+            </ul>
+          </div>
+
+          <div class="bmc-block bmc-revenue">
+            <h3>Revenue Streams</h3>
+            <p class="bmc-question">How do we make money?</p>
+            <ul>
+              <li><strong>Annual municipal subscriptions</strong> — $10,000–$20,000 per city, tiered by population.</li>
+              <li><strong>Ticketing fees</strong> — percentage-based fee on in-app ticket sales (second iteration).</li>
+              <li><strong>Premium user add-ons</strong> — optional paid features for power users (e.g. advanced discovery, early access).</li>
+              <li><strong>Sponsored placements</strong> — carefully gated, non-disruptive listings from local businesses.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 2. CUSTOMER RISK                              -->
+    <!-- Pain, persona, product/market fit             -->
+    <!-- ============================================= -->
+    <section class="section section-alt" id="customer-risk" aria-labelledby="customer-heading">
+      <div class="container">
+        <span class="section-kicker">Section 2</span>
+        <h2 id="customer-heading">Customer Risk: Do We Understand the People We're Building For?</h2>
+        <p class="section-lead">
+          Customer risk is the risk that we have misunderstood the problem, misidentified the customer, or built a product no one actually needs. The following analysis is our defense against that failure mode.
+        </p>
+
+        <!-- Pain point deep dive -->
+        <article class="report-block">
+          <h3>2.1 The Pain Point in Detail</h3>
+          <p>
+            Local events are one of the most universally demanded and most badly distributed categories of information online. The pain point CivicCircle addresses operates on two levels simultaneously.
+          </p>
+          <p>
+            <strong>At the resident level,</strong> information about what is happening in one's own town is scattered across at least five distinct channels: Facebook Events, Instagram stories, Eventbrite listings, physical flyers and corkboards, municipal websites, and neighborhood newsletters. Each of these channels is incomplete on its own — a Facebook user will miss the town's fall festival if the municipal website is the only place it's posted; a resident checking the city's website will miss a Tuesday jazz show at a local bar that only exists on Instagram. The cognitive overhead of maintaining awareness across five platforms is high enough that most residents simply stop trying. The result is a systematic under-consumption of local culture and civic activity that hurts the individual (who feels disconnected from their community) and the municipality (which loses engagement it has already paid to create).
+          </p>
+          <p>
+            <strong>At the municipal level,</strong> local governments have a structural communication problem. Most cities maintain static websites that residents visit only when they need something specific — renewing a permit, reporting a pothole. Press releases reach local newspapers whose readership is aging. Social media accounts are often run by a single overworked communications staffer and reach a fraction of the population. When a town spends taxpayer dollars to host a public meeting, a ribbon cutting, or a community forum, there is no reliable channel by which residents learn it is happening. Civic infrastructure exists; the last-mile distribution does not.
+          </p>
+          <p>
+            <strong>The fragmentation compounds:</strong> because no single channel is comprehensive, residents stop trusting any one source, which drives events further into fragmentation, which further lowers attendance, which further reduces incentive for organizers to publish widely. CivicCircle is an attempt to break this loop by offering a single, trusted, hyper-local layer.
+          </p>
+        </article>
+
+        <!-- Personas -->
+        <article class="report-block">
+          <h3>2.2 Customer Personas</h3>
+
+          <div class="persona-detail-grid">
+            <div class="persona-detail">
+              <div class="persona-detail-head">
+                <div class="persona-avatar persona-avatar-civic" aria-hidden="true">🏛️</div>
+                <div>
+                  <h4>Elena Torres, 47</h4>
+                  <p class="persona-role">Director of Communications, City of Ridgemont (pop. 85,000)</p>
+                </div>
+              </div>
+              <dl class="persona-dl">
+                <dt>Goals</dt>
+                <dd>Increase civic participation and meet engagement KPIs tied to her budget.</dd>
+                <dt>Frustrations</dt>
+                <dd>City website analytics are flat; social reach is limited; public meetings are under-attended.</dd>
+                <dt>Buying authority</dt>
+                <dd>Approves communications vendor spend up to $25K without council approval.</dd>
+                <dt>Success looks like</dt>
+                <dd>A measurable rise in event attendance and a dashboard she can show the mayor.</dd>
+              </dl>
+            </div>
+
+            <div class="persona-detail">
+              <div class="persona-detail-head">
+                <div class="persona-avatar persona-avatar-resident" aria-hidden="true">🎶</div>
+                <div>
+                  <h4>Marcus, 27</h4>
+                  <p class="persona-role">Software Engineer · Moved to town six months ago</p>
+                </div>
+              </div>
+              <dl class="persona-dl">
+                <dt>Goals</dt>
+                <dd>Plug into his new city socially — find live music, meet people, build a life outside work.</dd>
+                <dt>Frustrations</dt>
+                <dd>Spends 45 minutes on Friday nights searching across apps and still ends up staying home.</dd>
+                <dt>Behaviors</dt>
+                <dd>Heavy Instagram and Spotify user; rarely checks email; will install an app if a friend recommends it.</dd>
+                <dt>Success looks like</dt>
+                <dd>Opening one app and immediately seeing three things he'd actually go to this weekend.</dd>
+              </dl>
+            </div>
+
+            <div class="persona-detail">
+              <div class="persona-detail-head">
+                <div class="persona-avatar persona-avatar-resident" aria-hidden="true">👨‍👩‍👧</div>
+                <div>
+                  <h4>The Patel Family</h4>
+                  <p class="persona-role">Parents, two children · Long-time residents</p>
+                </div>
+              </div>
+              <dl class="persona-dl">
+                <dt>Goals</dt>
+                <dd>Weekend activities that are local, family-friendly, and affordable.</dd>
+                <dt>Frustrations</dt>
+                <dd>Relying on word-of-mouth through other parents; missing free community events they would have attended.</dd>
+                <dt>Behaviors</dt>
+                <dd>Use shared family calendars; prefer free and civic events; skeptical of new apps.</dd>
+                <dt>Success looks like</dt>
+                <dd>A weekly notification with five curated family events and a one-tap save-to-calendar.</dd>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product-market fit -->
+        <article class="report-block">
+          <h3>2.3 Product–Market Fit Hypothesis</h3>
+          <p>
+            Product–market fit, following Marc Andreessen's original framing, is the state in which a product is pulled out of the company by a market that wants it. For CivicCircle, the fit hypothesis rests on three empirical claims we commit to testing during validation.
+          </p>
+          <ol class="numbered-list">
+            <li><strong>Residents will consolidate their discovery behavior</strong> onto a single local events app if that app is genuinely comprehensive within their city. We measure fit as weekly active use of seven days or more per month among installed residents.</li>
+            <li><strong>Municipalities will pay between $10,000 and $20,000 annually</strong> for a turnkey civic engagement channel that measurably raises event attendance. We measure fit as at least 30% of pitched municipalities converting to a paid pilot within 90 days of outreach.</li>
+            <li><strong>Venues and event organizers will publish events to CivicCircle for free</strong> once it reaches a critical mass of local users. We measure fit as at least 40% organic event submission (rather than municipally-seeded) within six months of launch in a given market.</li>
+          </ol>
+          <p>
+            Product–market fit is achieved when all three claims hold simultaneously in at least one pilot market. Fit in one market is the precondition for geographic expansion.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 3. VALIDATION PLAN                            -->
+    <!-- MVP, virtual prototype, prototype, solution test -->
+    <!-- ============================================= -->
+    <section class="section" id="validation" aria-labelledby="validation-heading">
+      <div class="container">
+        <span class="section-kicker">Section 3</span>
+        <h2 id="validation-heading">Validation Plan: How We Prove the Idea Before We Build It</h2>
+        <p class="section-lead">
+          The validation plan follows a progressive staircase model: each step commits more resources, and each step can only be taken if the previous one cleared a defined success bar.
+        </p>
+
+        <!-- Validation staircase -->
+        <div class="staircase">
+          <div class="stair stair-1">
+            <div class="stair-num">01</div>
+            <div class="stair-body">
+              <h3>Virtual Prototype</h3>
+              <p class="stair-tag">Weeks 1–3 · Pre-code</p>
+              <p>
+                A clickable Figma prototype simulating the core resident flow: open app, see events near you, filter by type, tap into detail, save or RSVP. The virtual prototype is never connected to real data. Its purpose is to test whether the <em>experience</em> solves the pain point in the user's mind.
+              </p>
+              <p><strong>Success bar:</strong> at least 15 residents across three age brackets complete a moderated walkthrough. At least 75% identify that they would install a real version.</p>
+            </div>
+          </div>
+
+          <div class="stair stair-2">
+            <div class="stair-num">02</div>
+            <div class="stair-body">
+              <h3>Prototype</h3>
+              <p class="stair-tag">Weeks 4–8 · Early build</p>
+              <p>
+                A functional web app populated with manually-curated event data for a single neighborhood. No municipal dashboard yet, no ticketing. The prototype exists to test whether the product behaves as expected when loaded with real local content, and whether users return.
+              </p>
+              <p><strong>Success bar:</strong> at least 100 opt-in beta users and a 30% week-over-week return rate over a four-week period.</p>
+            </div>
+          </div>
+
+          <div class="stair stair-3">
+            <div class="stair-num">03</div>
+            <div class="stair-body">
+              <h3>Minimum Viable Product (MVP)</h3>
+              <p class="stair-tag">Weeks 9–16 · First pilot market</p>
+              <p>
+                The MVP, consistent with Ries's <em>Lean Startup</em> definition, is the smallest product that allows us to learn the most. For CivicCircle, the MVP is a free responsive web app covering a single pilot city, listing concerts, local events, farmers markets, town hall meetings, and stadium events. The initial MVP intentionally excludes in-house ticketing — those listings link out to external ticketing platforms. Excluding ticketing keeps engineering scope small and lets us learn whether the discovery layer works on its own.
+              </p>
+              <p><strong>Success bar:</strong> 2,000 monthly active users within the pilot city, at least one paid municipal pilot, and a measurable lift in attendance at two tracked civic events.</p>
+            </div>
+          </div>
+
+          <div class="stair stair-4">
+            <div class="stair-num">04</div>
+            <div class="stair-body">
+              <h3>Solution Test</h3>
+              <p class="stair-tag">Weeks 17–24 · Second iteration</p>
+              <p>
+                The solution test is the commercial validation stage. Here we introduce in-house ticketing — the second iteration explicitly called out in our business model — and measure whether the revenue streams actually materialize at projected rates. We also pitch a second and third municipality to test whether our sales motion is repeatable rather than a one-off.
+              </p>
+              <p><strong>Success bar:</strong> in-house ticketing used for at least 40% of paid events in-market, a second paid municipal contract signed, and unit economics that show a plausible path to break-even per market.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 4. MARKET RISK                                -->
+    <!-- Distribution, how customers buy & receive     -->
+    <!-- ============================================= -->
+    <section class="section section-alt" id="market-risk" aria-labelledby="market-heading">
+      <div class="container">
+        <span class="section-kicker">Section 4</span>
+        <h2 id="market-heading">Market Risk: Can We Reach Our Customers and Close the Sale?</h2>
+        <p class="section-lead">
+          Market risk is the risk that even if we build the right product, we cannot get it in front of the people who need it — or cannot convert them once we do. Because CivicCircle is a two-sided platform, we analyze this risk separately for each side.
+        </p>
+
+        <!-- Two-sided distribution table -->
+        <div class="market-grid">
+          <article class="market-col">
+            <h3>4.1 Distribution: Reaching Municipalities</h3>
+            <p>
+              Municipal buyers are reached through direct B2G sales motions. The pitch is delivered to the city's communications director, chief of staff, or technology officer, depending on the size of the municipality.
+            </p>
+            <h4>Channels</h4>
+            <ul class="check-list-muted">
+              <li>Cold outreach to communications directors of target cities (populations 25,000–150,000).</li>
+              <li>Civic tech conferences: Code for America Summit, Smart City Expo, and state-level municipal association meetings.</li>
+              <li>Referral networks from the first one or two pilot cities — mayors talk to each other.</li>
+              <li>Trade press and civic tech newsletters (e.g. <em>Route Fifty</em>, <em>GovTech</em>).</li>
+            </ul>
+            <h4>How the Purchase Happens</h4>
+            <p>
+              The municipal sales cycle is 60 to 120 days. It typically includes a discovery call, a live demo of the app loaded with sample data from the target city, a written proposal with tiered pricing, and a procurement process that may or may not require RFP. Contracts are signed annually, paid in full or quarterly depending on the city's fiscal calendar.
+            </p>
+          </article>
+
+          <article class="market-col">
+            <h3>4.2 Distribution: Reaching Residents</h3>
+            <p>
+              Residents are reached through a combination of the municipality's own channels (included in every subscription contract), organic word-of-mouth, and targeted digital acquisition.
+            </p>
+            <h4>Channels</h4>
+            <ul class="check-list-muted">
+              <li>Municipal co-marketing: every city contract includes a launch campaign via the city's newsletter, social, and physical signage.</li>
+              <li>App Store Optimization (ASO) for city-specific search terms.</li>
+              <li>Geo-targeted Instagram and TikTok campaigns in pilot markets.</li>
+              <li>Earned media in local newspapers, alt weeklies, and radio (the civic story is genuinely newsworthy).</li>
+              <li>Partner venues distributing via their own audiences (flyers at shows, email lists).</li>
+            </ul>
+            <h4>How Users Receive the Product</h4>
+            <p>
+              Residents install the app from the iOS App Store or Google Play, or access the responsive web app directly. All core features are free. During the MVP phase there is no sign-up wall — users can browse anonymously — to minimize friction. Account creation unlocks saving, RSVPing, and (second iteration) ticket purchase.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 5. PRODUCT RISK                               -->
+    <!-- How product is created, resources, partners   -->
+    <!-- ============================================= -->
+    <section class="section" id="product-risk" aria-labelledby="product-heading">
+      <div class="container">
+        <span class="section-kicker">Section 5</span>
+        <h2 id="product-heading">Product Risk: Can We Actually Build It?</h2>
+        <p class="section-lead">
+          Product risk is the risk that the product cannot be built within our resources, or cannot be maintained and improved at the speed the market demands.
+        </p>
+
+        <article class="report-block">
+          <h3>5.1 How the Product Is Created</h3>
+          <p>
+            CivicCircle is delivered as three coordinated components that share a single backend:
+          </p>
+          <ol class="numbered-list">
+            <li><strong>The resident-facing app</strong> — a responsive web app at launch, followed by native iOS and Android apps once usage justifies the cost of maintaining three codebases. Built on a React or React Native stack to maximize code reuse.</li>
+            <li><strong>The municipal dashboard</strong> — a web-based CMS giving city staff the ability to publish, edit, and broadcast events. Designed for non-technical users with a templated event creation flow.</li>
+            <li><strong>The ingestion and aggregation backend</strong> — services that pull event data from partner APIs, normalize it, deduplicate it, and make it searchable by geography and category.</li>
+          </ol>
+          <p>
+            Engineering proceeds in two-week sprints. The first three months focus entirely on the resident app and a manual municipal publishing tool; the dashboard and automated ingestion come in months four through six.
+          </p>
+        </article>
+
+        <article class="report-block">
+          <h3>5.2 Required Resources</h3>
+          <div class="resource-grid">
+            <div class="resource-card">
+              <h4>Technical</h4>
+              <ul class="tight-list">
+                <li>Mobile and web engineering talent</li>
+                <li>Cloud hosting (AWS or equivalent)</li>
+                <li>Mapping and geolocation services</li>
+                <li>Payment processing for in-app ticketing</li>
+                <li>Analytics, monitoring, and error tracking</li>
+              </ul>
+            </div>
+            <div class="resource-card">
+              <h4>Human</h4>
+              <ul class="tight-list">
+                <li>Two full-stack engineers (contract to start)</li>
+                <li>One UI/UX designer</li>
+                <li>Founder-led B2G sales for the first ten cities</li>
+                <li>Part-time community manager per market</li>
+              </ul>
+            </div>
+            <div class="resource-card">
+              <h4>Data</h4>
+              <ul class="tight-list">
+                <li>Meta Business API access for event metadata</li>
+                <li>Eventbrite and Ticketmaster partner feeds</li>
+                <li>Municipal calendar integrations</li>
+                <li>Venue-direct publishing relationships</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="report-block">
+          <h3>5.3 Required Partners</h3>
+          <p>
+            Partners are the difference between a product that works in a demo and a product that works in a real city. The critical path partnerships are:
+          </p>
+          <ul class="partner-list">
+            <li>
+              <strong>A software development firm or contract engineering team</strong> to execute the build through MVP — we treat this as a critical-path partner during the first six months and expect to bring engineering in-house during scale.
+            </li>
+            <li>
+              <strong>Meta (Facebook)</strong> via Business API — granting access to public event metadata that seeds the platform before enough native content exists.
+            </li>
+            <li>
+              <strong>Ticketing platforms</strong> (Eventbrite, Ticketmaster) as data partners during MVP, then as negotiated revenue-share partners or displaced entirely during second iteration.
+            </li>
+            <li>
+              <strong>One to three anchor municipalities</strong> willing to sign an early pilot agreement. These cities get discounted pricing in exchange for case-study rights and willingness to be referenceable to later prospects.
+            </li>
+            <li>
+              <strong>Anchor venues and festivals</strong> in each pilot market — including regional tentpoles like Jazz Fest — whose participation signals legitimacy to every smaller venue in the area.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 6. COST & PRICING                             -->
+    <!-- Major costs + pricing strategy                -->
+    <!-- ============================================= -->
+    <section class="section section-alt" id="cost-pricing" aria-labelledby="cost-heading">
+      <div class="container">
+        <span class="section-kicker">Section 6</span>
+        <h2 id="cost-heading">Cost Structure &amp; Pricing Strategy</h2>
+        <p class="section-lead">
+          The unit economics of CivicCircle are structured around a single repeatable unit — the city — with a mix of fixed platform costs and variable per-market costs.
+        </p>
+
+        <!-- Cost breakdown -->
+        <article class="report-block">
+          <h3>6.1 Major Cost Categories</h3>
+          <div class="cost-table-wrap">
+            <table class="cost-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Type</th>
+                  <th>Year 1 Rationale</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Software development</strong></td>
+                  <td>Fixed, front-loaded</td>
+                  <td>Largest single cost in Year 1. Building the app, dashboard, and ingestion backend to MVP quality. Partial capitalization over the software's useful life.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cloud infrastructure &amp; data APIs</strong></td>
+                  <td>Variable</td>
+                  <td>Scales with user count and event volume. Expected to be modest in Year 1 but grow quickly as markets are added.</td>
+                </tr>
+                <tr>
+                  <td><strong>Advertising &amp; user acquisition</strong></td>
+                  <td>Variable per market</td>
+                  <td>Every new pilot city receives a paid launch campaign. Spending is deliberately high in Year 1 to achieve density in the first market.</td>
+                </tr>
+                <tr>
+                  <td><strong>B2G sales</strong></td>
+                  <td>Semi-fixed</td>
+                  <td>Founder-led through the first ten cities. A dedicated sales hire becomes justified once five paid municipal contracts are signed.</td>
+                </tr>
+                <tr>
+                  <td><strong>Customer support &amp; operations</strong></td>
+                  <td>Semi-fixed</td>
+                  <td>Small in Year 1. Community managers become necessary once a market exceeds 5,000 MAU.</td>
+                </tr>
+                <tr>
+                  <td><strong>Payment processing (Iteration 2)</strong></td>
+                  <td>Variable</td>
+                  <td>Standard processing fees (~2.9% + 30¢ per transaction) on in-app ticketing. Passed partly to event organizers.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="footnote">
+            The product is best described as a <strong>spend-to-acquire, low-churn</strong> business: acquisition of the first paid municipal contract in a market is expensive, but retention is high because municipal budget cycles favor staying with proven vendors.
+          </p>
+        </article>
+
+        <!-- Pricing strategy -->
+        <article class="report-block">
+          <h3>6.2 Pricing Strategy</h3>
+          <p>
+            Pricing is tiered by population. The underlying logic is that a city's willingness and ability to pay for civic engagement software correlates closely with its residential base — both because larger cities have bigger communications budgets and because they extract more value from the same platform (more residents reached per dollar).
+          </p>
+
+          <div class="pricing-grid">
+            <article class="price-card">
+              <h4>Community Tier</h4>
+              <p class="price-range">$10,000 / year</p>
+              <p class="price-pop">Population up to ~50,000</p>
+              <ul class="tight-list">
+                <li>Full municipal dashboard</li>
+                <li>Unlimited event publishing</li>
+                <li>Standard launch campaign</li>
+                <li>Email support</li>
+              </ul>
+            </article>
+
+            <article class="price-card price-card-featured">
+              <span class="price-badge">Most common</span>
+              <h4>City Tier</h4>
+              <p class="price-range">$15,000 / year</p>
+              <p class="price-pop">Population ~50,000–100,000</p>
+              <ul class="tight-list">
+                <li>Everything in Community</li>
+                <li>Multi-department accounts</li>
+                <li>Dedicated launch + 90-day growth plan</li>
+                <li>Quarterly engagement reporting</li>
+              </ul>
+            </article>
+
+            <article class="price-card">
+              <h4>Metro Tier</h4>
+              <p class="price-range">$20,000 / year</p>
+              <p class="price-pop">Population ~100,000+</p>
+              <ul class="tight-list">
+                <li>Everything in City</li>
+                <li>Dedicated account manager</li>
+                <li>Custom integrations with existing systems</li>
+                <li>Priority product roadmap input</li>
+              </ul>
+            </article>
+          </div>
+
+          <h4>Rationale</h4>
+          <p>
+            The $10,000–$20,000 range was chosen deliberately. At the low end, the price is small enough to fit within the discretionary budget authority of a mid-level city communications director — avoiding the long friction of council approval. At the high end, the price remains well below the cost of a single part-time municipal communications hire, making it an obvious trade for a budget-constrained city. On the consumer side, keeping the resident experience entirely free is non-negotiable: any paywall at the resident level would break civic equity, violate the platform's fundamental value proposition, and make municipal partnership politically difficult.
+          </p>
+          <p>
+            Secondary revenue streams — ticketing fees and premium add-ons — are designed to scale without requiring further municipal sales. In mature markets they are projected to exceed subscription revenue over a three-to-five year horizon.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SUMMARY / CLOSING                             -->
+    <!-- ============================================= -->
+    <section class="section cta-final">
+      <div class="container cta-wrap">
+        <h2>Next: Go-to-Market Strategy</h2>
+        <p>The business model is the machine. Marketing is how we turn it on. Continue to our positioning, brand, and acquisition strategy.</p>
+        <div class="cta-buttons">
+          <a href="marketing.html" class="btn btn-primary btn-large">Read the Marketing Plan →</a>
+          <a href="business.html" class="btn btn-ghost btn-large">Business Deep Dive</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================= -->
+  <!-- FOOTER (shared)                               -->
+  <!-- ============================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 26 L8 20 L12 20 L12 14 L16 14 L16 22 L20 22 L20 10 L24 10 L24 18 L28 18 L28 24 L32 24 L32 26 Z" fill="currentColor"/>
+          </svg>
+          <span class="brand-name">CivicCircle</span>
+        </div>
+        <p>One app for every local event. Built for communities. Made for neighbors.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="startup.html">Startup</a></li>
+          <li><a href="marketing.html">Marketing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="name.html">Name &amp; Brand</a></li>
+          <li><a href="business.html">Business Model</a></li>
+          <li><a href="online.html">Online Presence</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Instagram · @civiccircle</a></li>
+          <li><a href="#">Facebook · @civiccircle</a></li>
+          <li><a href="mailto:hello@civiccircle.com">hello@civiccircle.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CivicCircle. A Tulane University digital entrepreneurship project by Olivia Marujo, Sander Schuchat, and Holden Vogel.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

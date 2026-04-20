@@ -1,0 +1,621 @@
+/* =================================================
+   CIVICCIRCLE — STARTUP PAGE STYLES
+   Extends styles.css. Scoped to startup.html only.
+   ================================================= */
+
+/* --------- 1. PAGE HERO --------- */
+.page-hero {
+  padding: var(--space-xl) 0 var(--space-lg);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(45, 91, 255, 0.06), transparent 45%),
+    radial-gradient(circle at 90% 40%, rgba(245, 181, 68, 0.08), transparent 55%),
+    var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+.page-hero h1 {
+  max-width: 900px;
+  margin-bottom: var(--space-md);
+}
+.page-hero-lead {
+  font-size: 1.2rem;
+  max-width: 800px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+/* Report-style metadata row */
+.report-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.report-meta > div { display: flex; flex-direction: column; }
+.report-meta dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.report-meta dd {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0;
+}
+
+/* --------- 2. TABLE OF CONTENTS --------- */
+.toc-section {
+  padding: var(--space-lg) 0;
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+.toc {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+.toc-title {
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+  margin: 0;
+  font-weight: 600;
+}
+.toc ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+  counter-reset: none;
+  list-style: none;
+}
+.toc li a {
+  color: var(--color-navy);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.toc li a:hover { border-bottom-color: var(--color-accent); }
+
+/* Alt section background for alternating blocks */
+.section-alt { background: var(--color-bg-alt); }
+.section-alt + .section-alt { background: var(--color-bg-alt); }
+
+/* --------- 3. BUSINESS MODEL CANVAS GRID --------- */
+.bmc-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+/*
+  Desktop canvas layout — matches traditional BMC:
+  | Partners | Activities | Value Prop  | Relations | Segments |
+  | Partners | Resources  | Value Prop  | Channels  | Segments |
+  |     Cost Structure (2 wide)        | Revenue Streams (3)   |
+*/
+.bmc-partners  { grid-column: 1; grid-row: 1 / span 2; }
+.bmc-activities { grid-column: 2; grid-row: 1; }
+.bmc-resources  { grid-column: 2; grid-row: 2; }
+.bmc-value     { grid-column: 3; grid-row: 1 / span 2; }
+.bmc-relations { grid-column: 4; grid-row: 1; }
+.bmc-channels  { grid-column: 4; grid-row: 2; }
+.bmc-segments  { grid-column: 5; grid-row: 1 / span 2; }
+.bmc-cost      { grid-column: 1 / span 2; }
+.bmc-revenue   { grid-column: 3 / span 3; }
+
+.bmc-block {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.bmc-block:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-blue);
+}
+.bmc-block h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--color-navy);
+}
+.bmc-question {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+.bmc-block ul {
+  margin: 0;
+  padding: 0;
+}
+.bmc-block ul li {
+  padding: 0.4rem 0;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  border-bottom: 1px dashed var(--color-border);
+  line-height: 1.45;
+}
+.bmc-block ul li:last-child { border-bottom: none; }
+.bmc-block ul li strong { color: var(--color-navy); }
+
+/* Accent colors to differentiate BMC blocks visually */
+.bmc-partners   { border-top: 3px solid #8B6DD9; }
+.bmc-activities { border-top: 3px solid #4CB0A7; }
+.bmc-resources  { border-top: 3px solid #4CB0A7; }
+.bmc-value      { border-top: 3px solid var(--color-accent); background: #FFFBF2; }
+.bmc-relations  { border-top: 3px solid #E87A6C; }
+.bmc-channels   { border-top: 3px solid #E87A6C; }
+.bmc-segments   { border-top: 3px solid var(--color-blue); }
+.bmc-cost       { border-top: 3px solid #5A6278; }
+.bmc-revenue    { border-top: 3px solid #2D8A4F; }
+
+/* Value prop internal stack */
+.value-stack { display: flex; flex-direction: column; gap: 0.75rem; }
+.value-item {
+  padding: 0.6rem 0.8rem;
+  background: rgba(245, 181, 68, 0.08);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.value-item strong {
+  display: block;
+  color: var(--color-navy);
+  font-size: 0.88rem;
+  margin-bottom: 0.25rem;
+}
+.value-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* --------- 4. REPORT BLOCKS (term-paper body) --------- */
+.report-block {
+  background: #fff;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--space-md);
+}
+.section-alt .report-block { background: #fff; }
+.report-block h3 {
+  font-size: 1.4rem;
+  color: var(--color-navy);
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-accent);
+  display: inline-block;
+}
+.report-block h4 {
+  font-size: 1.05rem;
+  margin-top: var(--space-md);
+  margin-bottom: 0.6rem;
+  color: var(--color-navy);
+}
+.report-block p {
+  color: var(--color-text);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+}
+.report-block p em { color: var(--color-blue); font-style: italic; }
+
+.numbered-list {
+  counter-reset: item;
+  margin: var(--space-sm) 0 var(--space-md);
+  padding: 0;
+}
+.numbered-list li {
+  counter-increment: item;
+  padding: 0.6rem 0 0.6rem 3rem;
+  position: relative;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+.numbered-list li::before {
+  content: counter(item);
+  position: absolute;
+  left: 0; top: 0.5rem;
+  width: 2rem; height: 2rem;
+  background: var(--color-navy);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.tight-list {
+  margin: 0;
+  padding: 0;
+}
+.tight-list li {
+  padding: 0.35rem 0 0.35rem 1.25rem;
+  position: relative;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+.tight-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
+.check-list-muted {
+  margin: 0;
+  padding: 0;
+}
+.check-list-muted li {
+  padding: 0.5rem 0 0.5rem 1.8rem;
+  position: relative;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+.check-list-muted li::before {
+  content: '✓';
+  position: absolute;
+  left: 0; top: 0.5rem;
+  width: 1.2rem; height: 1.2rem;
+  background: var(--color-blue-light);
+  color: var(--color-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* --------- 5. DETAILED PERSONAS --------- */
+.persona-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+.persona-detail {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+}
+.persona-detail-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+.persona-detail-head h4 {
+  margin: 0 0 0.2rem;
+  font-size: 1.1rem;
+}
+.persona-detail .persona-role {
+  font-size: 0.82rem;
+  margin: 0;
+  color: var(--color-text-muted);
+}
+.persona-dl { margin: 0; }
+.persona-dl dt {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-blue);
+  margin-top: 0.75rem;
+}
+.persona-dl dt:first-child { margin-top: 0; }
+.persona-dl dd {
+  margin: 0.2rem 0 0.5rem;
+  color: var(--color-text);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* --------- 6. VALIDATION STAIRCASE --------- */
+.staircase {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  position: relative;
+}
+.staircase::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 2.5rem;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--color-blue), var(--color-accent));
+  border-radius: 3px;
+  z-index: 0;
+}
+.stair {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-md);
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+.stair-num {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  color: var(--color-navy);
+  border: 3px solid var(--color-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+.stair-3 .stair-num,
+.stair-4 .stair-num { border-color: var(--color-accent); }
+
+.stair-body {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  flex: 1;
+}
+.stair-body h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.3rem;
+}
+.stair-tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-blue);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+.stair-body p {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin-bottom: var(--space-sm);
+}
+
+/* --------- 7. MARKET RISK COLUMNS --------- */
+.market-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.market-col {
+  background: #fff;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+.market-col h3 {
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-accent);
+  display: inline-block;
+  font-size: 1.25rem;
+}
+.market-col h4 {
+  color: var(--color-navy);
+  font-size: 0.95rem;
+  margin: var(--space-md) 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --------- 8. PRODUCT RISK RESOURCE GRID --------- */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+.resource-card {
+  background: var(--color-bg-alt);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-blue);
+}
+.resource-card h4 {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+  color: var(--color-navy);
+  font-size: 1rem;
+}
+.partner-list {
+  margin: var(--space-sm) 0;
+  padding: 0;
+}
+.partner-list li {
+  padding: var(--space-sm) 0 var(--space-sm) 2rem;
+  position: relative;
+  border-bottom: 1px solid var(--color-border);
+  line-height: 1.6;
+}
+.partner-list li:last-child { border-bottom: none; }
+.partner-list li::before {
+  content: '◆';
+  position: absolute;
+  left: 0.2rem; top: var(--space-sm);
+  color: var(--color-accent);
+  font-size: 1rem;
+}
+.partner-list li strong { color: var(--color-navy); }
+
+/* --------- 9. COST TABLE --------- */
+.cost-table-wrap {
+  overflow-x: auto;
+  margin: var(--space-sm) 0 var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+.cost-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  min-width: 600px;
+}
+.cost-table th,
+.cost-table td {
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.cost-table thead th {
+  background: var(--color-navy);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.cost-table tbody tr:last-child td { border-bottom: none; }
+.cost-table tbody tr:hover { background: var(--color-bg-alt); }
+.cost-table td:first-child { width: 25%; }
+.cost-table td:nth-child(2) {
+  width: 20%;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.footnote {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-blue-light);
+  border-left: 3px solid var(--color-blue);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.92rem;
+  color: var(--color-navy);
+}
+
+/* --------- 10. PRICING CARDS --------- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+  margin: var(--space-md) 0 var(--space-lg);
+}
+.price-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.price-card h4 {
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem;
+  color: var(--color-navy);
+}
+.price-range {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: var(--space-sm) 0 0.25rem;
+}
+.price-pop {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+.price-card-featured {
+  border: 2px solid var(--color-accent);
+  background: #FFFBF2;
+  transform: translateY(-8px);
+}
+.price-card-featured:hover { transform: translateY(-12px); }
+.price-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: var(--color-navy);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* --------- 11. RESPONSIVE --------- */
+@media (max-width: 1024px) {
+  /* Stack BMC to a 2-column layout on tablets */
+  .bmc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .bmc-partners,
+  .bmc-activities,
+  .bmc-resources,
+  .bmc-value,
+  .bmc-relations,
+  .bmc-channels,
+  .bmc-segments,
+  .bmc-cost,
+  .bmc-revenue {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .bmc-value { grid-column: 1 / span 2; }
+  .market-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 680px) {
+  /* Single column BMC on mobile */
+  .bmc-grid { grid-template-columns: 1fr; }
+  .bmc-value { grid-column: auto; }
+  .toc { flex-direction: column; align-items: flex-start; }
+  .toc ol { flex-direction: column; gap: 0.5rem; }
+  .stair { grid-template-columns: 1fr; gap: var(--space-sm); }
+  .stair-num { margin-bottom: 0; }
+  .staircase::before { display: none; }
+  .price-card-featured { transform: none; }
+  .price-card-featured:hover { transform: translateY(-4px); }
+  .report-block { padding: var(--space-md); }
+}
