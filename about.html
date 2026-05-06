@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — CivicCircle</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── About-specific styles ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .member-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .member-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+
+    .member-card-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 2rem 2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .member-card-header::after {
+      content: '';
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 100px; height: 100px;
+      background: rgba(13,126,116,.15);
+      border-radius: 50%;
+    }
+    .member-card-header::before {
+      content: '';
+      position: absolute;
+      bottom: -30px; left: 50%;
+      width: 60px; height: 60px;
+      background: rgba(46,123,202,.1);
+      border-radius: 50%;
+    }
+
+    .member-initials {
+      width: 64px; height: 64px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .member-initials.blue  { background: var(--blue); }
+    .member-initials.gold  { background: var(--gold); }
+
+    .member-card-header h3 {
+      color: var(--white);
+      font-size: 1.4rem;
+      margin-bottom: .25rem;
+      position: relative;
+      z-index: 1;
+    }
+    .member-card-header .role-title {
+      font-family: 'DM Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    .member-card-body {
+      padding: 1.75rem 2rem;
+    }
+
+    .member-section {
+      margin-bottom: 1.5rem;
+    }
+    .member-section:last-child { margin-bottom: 0; }
+    .member-section .label {
+      display: block;
+      margin-bottom: .4rem;
+    }
+    .member-section p {
+      font-size: .93rem;
+      line-height: 1.65;
+    }
+
+    .member-divider {
+      border: none;
+      border-top: 1px solid var(--gray-100);
+      margin: 1.25rem 0;
+    }
+
+    /* ── Intro band ── */
+    .intro-band {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 3rem 2rem;
+    }
+    .intro-band-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 700px) {
+      .intro-band-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .team-grid { grid-template-columns: 1fr; }
+    }
+    .intro-stat {
+      text-align: center;
+    }
+    .intro-stat .big-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .intro-stat .big-num span { color: var(--teal); }
+    .intro-stat p { font-size: .88rem; color: var(--gray-400); margin-top: .25rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-dot"></span>
+        CivicCircle
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="startup.html">Startup</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="name.html">Name</a></li>
+        <li><a href="online.html">Online</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+  ════════════════════════════════════════════ -->
+  <header class="page-hero">
+    <div class="hero-inner">
+      <span class="label">The Team</span>
+      <h1>About Us</h1>
+      <p>CivicCircle was built by three Tulane University students who believe local governments deserve better digital infrastructure — and that civic participation starts with awareness.</p>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       INTRO BAND
+  ════════════════════════════════════════════ -->
+  <div class="intro-band">
+    <div class="intro-band-inner">
+      <div class="intro-stat">
+        <div class="big-num">3<span>.</span></div>
+        <p>Founders across communications,<br>strategy, and operations</p>
+      </div>
+      <div>
+        <h2 style="font-size:1.6rem; margin-bottom:.75rem;">A Shared Conviction</h2>
+        <p>We are a cross-disciplinary team from Tulane University's Newcomb-Tulane College and Freeman School of Business, united by the belief that the gap between local governments and the communities they serve is partly a technology problem. CivicCircle is our answer: a B2G2C civic engagement platform that aggregates, surfaces, and distributes local events and civic opportunities directly to residents. Each of us brings a distinct skillset to the table — and a genuine investment in the civic technology market.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       TEAM MEMBERS
+  ════════════════════════════════════════════ -->
+  <section class="section">
+    <span class="label">Meet the Founders</span>
+    <h2 style="margin-top:.5rem; margin-bottom:.5rem;">The CivicCircle Team</h2>
+    <p style="max-width:600px;">Each team member led a core pillar of the venture, contributing both subject-matter expertise and genuine interest in the civic technology space.</p>
+
+    <div class="team-grid">
+
+      <!-- ── Olivia Marujo ── -->
+      <div class="member-card">
+        <div class="member-card-header">
+          <div class="member-initials">OM</div>
+          <h3>Olivia Marujo</h3>
+          <div class="role-title">Head of Operations &amp; Business Development</div>
+        </div>
+        <div class="member-card-body">
+
+          <div class="member-section">
+            <span class="label">Primary Responsibility</span>
+            <p>Olivia oversaw all operational planning and government-facing business development for CivicCircle, including the design of the B2G (business-to-government) contracting model and the identification of target municipal partners for the platform's initial rollout.</p>
+          </div>
+
+          <hr class="member-divider" />
+
+          <div class="member-section">
+            <span class="label">Work Undertaken</span>
+            <p>Olivia conducted the primary market research into municipal procurement processes, identifying the regulatory and budgetary constraints that shape how local governments adopt SaaS platforms. She developed CivicCircle's government partnership pitch framework, mapped potential pilot-city candidates, and drafted the operational workflows that govern data ingestion from municipal event systems. Olivia also led the creation of the venture's financial projections and revenue model documentation.</p>
+          </div>
+
+          <hr class="member-divider" />
+
+          <div class="member-section">
+            <span class="label">Interest in the Market</span>
+            <p>Olivia's interest in the civic technology market stems from firsthand observation of how fragmented local government communications leave residents — particularly in New Orleans — underserved and uninformed. She is drawn to the intersection of public administration and entrepreneurship, and sees civic tech as a category where mission-driven ventures can generate both meaningful social impact and sustainable business returns. CivicCircle represents her belief that better operational infrastructure for municipalities is a prerequisite for genuine civic participation.</p>
+          </div>
+
+          <div style="margin-top:1.25rem;">
+            <span class="pill">Operations</span>&nbsp;
+            <span class="pill pill-blue">B2G Strategy</span>&nbsp;
+            <span class="pill pill-gold">Finance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Holden Vogel ── -->
+      <div class="member-card">
+        <div class="member-card-header">
+          <div class="member-initials blue">HV</div>
+          <h3>Holden Vogel</h3>
+          <div class="role-title">Head of Product &amp; Technology Strategy</div>
+        </div>
+        <div class="member-card-body">
+
+          <div class="member-section">
+            <span class="label">Primary Responsibility</span>
+            <p>Holden led all product development strategy and technology architecture decisions for CivicCircle, overseeing the design of the platform's core aggregation engine, user experience, and the technical roadmap from MVP to full deployment.</p>
+          </div>
+
+          <hr class="member-divider" />
+
+          <div class="member-section">
+            <span class="label">Work Undertaken</span>
+            <p>Holden mapped the technical stack required for CivicCircle's event-aggregation infrastructure, evaluated third-party API integration options (including open government data portals and municipal calendar systems), and developed the platform's product requirements document. He produced UX wireframes for both the citizen-facing mobile interface and the municipal administrator dashboard, and led the team's evaluation of build-vs-buy decisions for core platform components. Holden also researched comparable civic tech SaaS products to benchmark CivicCircle's feature set and positioning.</p>
+          </div>
+
+          <hr class="member-divider" />
+
+          <div class="member-section">
+            <span class="label">Interest in the Market</span>
+            <p>Holden is motivated by the application of modern product-development methodology to problems in the public sector — a space he sees as systematically underinvested in relative to its social importance. His interest in civic technology is rooted in the conviction that the same platform-design principles that have transformed consumer markets can be adapted to rebuild the relationship between residents and local institutions. He views government technology as one of the most consequential and underexplored verticals for venture-scale product building.</p>
+          </div>
+
+          <div style="margin-top:1.25rem;">
+            <span class="pill">Product</span>&nbsp;
+            <span class="pill pill-blue">Tech Strategy</span>&nbsp;
+            <span class="pill pill-gold">UX</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Sander Schuchat ── -->
+      <div class="member-card">
+        <div class="member-card-header">
+          <div class="member-initials gold">SS</div>
+          <h3>Sander Schuchat</h3>
+          <div class="role-title">Head of Marketing &amp; Communications</div>
+        </div>
+        <div class="member-card-body">
+
+          <div class="member-section">
+            <span class="label">Primary Responsibility</span>
+            <p>Sander led the development of CivicCircle's brand identity, go-to-market strategy, and all external communications — including the design of the venture's messaging architecture across both its B2G (government) and C (consumer/resident) audience segments.</p>
+          </div>
+
+          <hr class="member-divider" />
+
+          <div class="member-section">
+            <span class="label">Work Undertaken</span>
+            <p>Sander developed CivicCircle's full brand system — including the platform name, visual identity direction, and tone-of-voice guidelines — and translated these into the marketing strategy and content framework used across the venture's digital channels. Drawing on his training in communications and marketing theory, he applied David Meerman Scott's new marketing principles to articulate CivicCircle's resident-facing value proposition and designed the user acquisition strategy targeting civic-engaged community members. Sander also led the production of the venture's pitch narrative and created the content for this website, integrating academic research on civic engagement with entrepreneurial communications best practices.</p>
+          </div>
+
+          <hr class="member-divider" />
+
+          <div class="member-section">
+            <span class="label">Interest in the Market</span>
+            <p>Sander's interest in civic technology is driven by a background spanning live performance, sports, and community-facing work in New Orleans — all of which have given him a street-level understanding of how disconnected residents can feel from local civic life. As a Communication student with a concentration in marketing and strategy, he sees CivicCircle as a vehicle for applying brand and audience-building principles to a genuinely public-benefit purpose. His experience in entrepreneurial environments — including Tulane's Innovation Institute Startup Clinic — has reinforced his belief that mission-driven ventures require the same rigorous marketing thinking as purely commercial ones.</p>
+          </div>
+
+          <div style="margin-top:1.25rem;">
+            <span class="pill">Marketing</span>&nbsp;
+            <span class="pill pill-blue">Brand</span>&nbsp;
+            <span class="pill pill-gold">Communications</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end .team-grid -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <strong>CivicCircle</strong> &nbsp;·&nbsp; Connecting Communities. Empowering Municipalities. &nbsp;·&nbsp; © 2024 CivicCircle. All rights reserved.
+  </footer>
+
+</body>
+</html>

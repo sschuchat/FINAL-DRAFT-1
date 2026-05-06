@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Presence — CivicCircle</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Online-page specific styles ── */
+    .toc-nav {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .toc-nav p.label { margin-bottom: .75rem; }
+    .toc-nav ol {
+      list-style: decimal;
+      padding-left: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: .35rem .5rem;
+    }
+    .toc-nav ol li { font-size: .9rem; }
+    .toc-nav ol li a { color: var(--blue); }
+    .toc-nav ol li a:hover { text-decoration: underline; }
+
+    .content-section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 80px;
+    }
+    .content-section .section-num {
+      font-family: 'DM Mono', monospace;
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: .35rem;
+      display: block;
+    }
+    .content-section h2 {
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      margin-bottom: 1.25rem;
+      padding-bottom: .75rem;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .content-section h2 span { color: var(--teal); }
+    .content-section p { margin-bottom: 1rem; }
+    .content-section p:last-child { margin-bottom: 0; }
+
+    /* Domain card */
+    .domain-card {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.5rem;
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .domain-url {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: var(--teal-light);
+      font-weight: 500;
+      flex: 1;
+      min-width: 200px;
+    }
+    .domain-badge {
+      background: rgba(13,126,116,.2);
+      color: var(--teal-light);
+      border: 1px solid rgba(13,126,116,.3);
+      border-radius: 100px;
+      padding: .4rem 1.1rem;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .domain-badge.secondary {
+      background: rgba(46,123,202,.15);
+      color: #7DB8E8;
+      border-color: rgba(46,123,202,.25);
+    }
+
+    /* Social platform cards */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .social-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .social-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .social-card .platform-icon {
+      font-size: 1.5rem;
+      margin-bottom: .25rem;
+    }
+    .social-card .platform-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .social-card .handle {
+      font-family: 'DM Mono', monospace;
+      font-size: .85rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+    .social-card p {
+      font-size: .88rem;
+      line-height: 1.55;
+      margin-top: .25rem;
+    }
+    .avail-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-top: .5rem;
+    }
+    .avail-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+    .avail-badge.available { color: var(--teal); }
+    .avail-badge.check     { color: #C9A84C; }
+
+    /* Payment cards */
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .payment-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.75rem;
+    }
+    .payment-card .payment-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .2rem;
+    }
+    .payment-card .payment-role {
+      font-size: .78rem;
+      color: var(--teal);
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+    .payment-card p { font-size: .91rem; }
+
+    /* Tools grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .tool-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1.4rem 1.6rem;
+      border-left: 4px solid var(--teal);
+      transition: box-shadow var(--transition);
+    }
+    .tool-card:hover { box-shadow: var(--shadow-md); }
+    .tool-card.blue { border-left-color: var(--blue); }
+    .tool-card.gold { border-left-color: var(--gold); }
+    .tool-card.navy { border-left-color: var(--navy); }
+    .tool-card h4 { color: var(--navy); margin-bottom: .15rem; }
+    .tool-card .category {
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: .6rem;
+      display: block;
+    }
+    .tool-card p { font-size: .9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-dot"></span>
+        CivicCircle
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="startup.html">Startup</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="name.html">Name</a></li>
+        <li><a href="online.html" class="active">Online</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+  ════════════════════════════════════════════ -->
+  <header class="page-hero">
+    <div class="hero-inner">
+      <span class="label">Digital Infrastructure</span>
+      <h1>Online Presence</h1>
+      <p>A comprehensive accounting of the domain, social media, payment, and digital operations infrastructure CivicCircle will deploy to execute its B2G2C business model.</p>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════ -->
+  <main class="section">
+
+    <!-- Table of Contents -->
+    <div class="toc-nav">
+      <p class="label">Contents</p>
+      <ol>
+        <li><a href="#domain">Domain Name &amp; Website URL</a></li>
+        <li><a href="#social">Social Media Platforms &amp; Handles</a></li>
+        <li><a href="#payment">Payment Platforms</a></li>
+        <li><a href="#tools">Additional Digital Resources &amp; Tools</a></li>
+      </ol>
+    </div>
+
+    <!-- ── 1. Domain ── -->
+    <div class="content-section" id="domain">
+      <span class="section-num">Section 01</span>
+      <h2>Domain Name &amp; <span>Website URL</span></h2>
+
+      <p>The domain name a venture chooses is its primary address on the internet and functions as a brand asset in its own right. For CivicCircle, domain selection must balance brand fidelity (the domain should reflect the product name exactly or nearly), credibility in a government-facing sales context (professional TLDs signal institutional legitimacy), and commercial availability.</p>
+
+      <p><strong>Primary venture domain (not the domain of this course assignment):</strong></p>
+
+      <div class="domain-card">
+        <div class="domain-url">www.civiccircle.io</div>
+        <div class="domain-badge">Primary Domain</div>
+      </div>
+
+      <div class="domain-card" style="background:var(--navy-mid); margin-top:-.75rem; border-radius:0 0 var(--radius-lg) var(--radius-lg); padding-top:1.25rem;">
+        <div class="domain-url" style="font-size:1rem; color:rgba(255,255,255,.6);">civiccircle.com &nbsp;·&nbsp; civiccircle.co &nbsp;·&nbsp; civiccircle.gov (inapplicable)</div>
+        <div class="domain-badge secondary">Acquire / Redirect</div>
+      </div>
+
+      <p style="margin-top:1.5rem;"><strong>Why .io as the primary TLD:</strong> The <code>.io</code> TLD has become the standard identifier for technology platforms, SaaS products, and developer-facing tools. For a civic technology platform targeting sophisticated government procurement officers and civic technology directors, <code>.io</code> signals a technology-native product in a way that <code>.com</code> — which carries associations with general commerce — does not. The <code>.io</code> TLD also remains commercially distinct from <code>.gov</code> (reserved for U.S. government entities), avoiding any perception of fraudulent affiliation with government bodies, which would be particularly damaging in a government-facing market.</p>
+
+      <div class="highlight-box">
+        <p><strong>Availability Determination Process:</strong> Domain availability for <code>civiccircle.io</code> was assessed through the following methods: (1) direct query through domain registrar WHOIS lookup tools (Namecheap, GoDaddy, and ICANN WHOIS); (2) search for any operating business or web presence resolving at that address; and (3) cross-referencing with the trademark clearance analysis conducted for the "CivicCircle" mark, which found no large-scale commercial entity using the name as a primary brand identity. The <code>.io</code> registry does not require residency or organizational eligibility, making it accessible for U.S.-based ventures. Domains in the <code>.io</code> namespace typically retail for $30–$60/year.</p>
+      </div>
+
+      <p><strong>Strategy for <code>.com</code>:</strong> Independently of the <code>.io</code> primary domain, CivicCircle should make every reasonable effort to acquire <code>civiccircle.com</code> — either through direct registration if available, or through acquisition from any current registrant if it is parked or dormant. The <code>.com</code> TLD remains the dominant expectation for general internet users, and failure to own the <code>.com</code> equivalent of a brand creates a persistent risk of user confusion and traffic leakage. Both <code>civiccircle.com</code> and <code>civiccircle.co</code> should redirect to the primary <code>.io</code> property.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── 2. Social Media ── -->
+    <div class="content-section" id="social">
+      <span class="section-num">Section 02</span>
+      <h2>Social Media Platforms <span>&amp; Handles</span></h2>
+
+      <p>Social media strategy for CivicCircle serves a dual purpose: establishing the brand as a credible presence in the civic technology conversation (targeting government decision-makers, civic leaders, and policy professionals) while also building a direct audience of engaged residents who represent the end-user population the platform serves. The handle <strong>@CivicCircle</strong> will be pursued across all platforms as the primary identifier.</p>
+
+      <p><strong>Handle availability</strong> was assessed through direct search on each platform's user search function, as well as through the third-party social media handle checker Namecheckr, which queries platform APIs to determine username availability in real time.</p>
+
+      <div class="social-grid">
+
+        <div class="social-card">
+          <div class="platform-icon">💼</div>
+          <div class="platform-name">LinkedIn</div>
+          <div class="handle">linkedin.com/company/civiccircle</div>
+          <span class="avail-badge available">Verify availability</span>
+          <p>The highest-priority platform for CivicCircle's B2G sales motion. Municipal government officials, city managers, civic tech directors, and public administration professionals are active on LinkedIn. A Company Page under "CivicCircle" enables direct outreach to decision-makers, publication of thought leadership content about civic engagement and government technology, and job posting as the team grows. LinkedIn is the primary platform for government-sector B2B brand building.</p>
+        </div>
+
+        <div class="social-card">
+          <div class="platform-icon">𝕏</div>
+          <div class="platform-name">X (Twitter)</div>
+          <div class="handle">@CivicCircle</div>
+          <span class="avail-badge available">Verify availability</span>
+          <p>X/Twitter remains the most active platform for the civic technology community, public policy discourse, and government transparency advocates. The #CivicTech and #GovTech hashtag ecosystems on X provide direct access to an existing audience of civic technologists, local government professionals, and civic-engagement nonprofits who represent both potential partners and potential municipal referral sources. X is also the primary platform through which journalists and policy reporters monitor emerging civic technology ventures.</p>
+        </div>
+
+        <div class="social-card">
+          <div class="platform-icon">📸</div>
+          <div class="platform-name">Instagram</div>
+          <div class="handle">@CivicCircle</div>
+          <span class="avail-badge available">Verify availability</span>
+          <p>Instagram serves CivicCircle's consumer-facing (C) brand-building function, targeting the civic-engaged resident audience who will use the platform's event-discovery features. Visual content — event highlights, community stories, behind-the-scenes city government moments, and resident testimonials — drives awareness and builds an emotional connection to the platform's mission. Instagram Reels and Stories are particularly effective for reaching younger resident demographics in urban centers, the primary early-adopter audience for a civic engagement tool.</p>
+        </div>
+
+        <div class="social-card">
+          <div class="platform-icon">▶</div>
+          <div class="platform-name">YouTube</div>
+          <div class="handle">@CivicCircle</div>
+          <span class="avail-badge available">Verify availability</span>
+          <p>YouTube functions as CivicCircle's long-form content and product education channel. Platform onboarding walkthroughs, municipal administrator tutorial videos, and "How CivicCircle Works" explainer content will be hosted here and embedded across the website and in sales collateral. YouTube content is also indexable by Google, providing SEO benefits for searches related to civic tech platforms, government event software, and resident engagement tools. A dedicated channel allows CivicCircle to build a library of searchable educational assets over time.</p>
+        </div>
+
+        <div class="social-card">
+          <div class="platform-icon">in</div>
+          <div class="platform-name">Facebook</div>
+          <div class="handle">facebook.com/CivicCircle</div>
+          <span class="avail-badge check">Check availability</span>
+          <p>Facebook's relevance for CivicCircle is tied to its continued dominance as a community-organizing and local-news-sharing platform among adult residents and community leaders — the exact demographic most likely to engage with civic events and local government programming. Facebook Groups and Facebook Events remain popular infrastructure for local civic activity, and a CivicCircle Business Page enables targeted advertising to resident demographics segmented by city, neighborhood, age, and civic interests. Facebook is a secondary platform, but should not be ignored in an audience that includes residents aged 35 and above.</p>
+        </div>
+
+        <div class="social-card">
+          <div class="platform-icon">🔗</div>
+          <div class="platform-name">Nextdoor</div>
+          <div class="handle">CivicCircle (Business)</div>
+          <span class="avail-badge check">Business account</span>
+          <p>Nextdoor is a uniquely relevant platform for CivicCircle because it is explicitly organized around neighborhood-level community communication — the same geographic and civic layer CivicCircle serves. A Nextdoor Business Account allows CivicCircle to promote the platform directly within the neighborhoods served by partner municipalities. Nextdoor's "Local Deals" and neighborhood-targeted posts provide access to a hyper-local, civically-engaged resident base that is by definition interested in local events and community news, making it one of the highest-affinity audiences for CivicCircle's value proposition.</p>
+        </div>
+
+      </div>
+
+      <div class="callout">
+        <p><strong>Handle Squatting Contingency:</strong> In the event that <code>@CivicCircle</code> is unavailable on any given platform, the preferred fallback handle convention is <strong>@CivicCircleApp</strong> or <strong>@JoinCivicCircle</strong>, which are distinct, brand-consistent, and likely available. Vanity URL consistency across platforms is important for brand discoverability and should be treated as a Day 1 operational priority alongside domain acquisition. Namecheckr, KnowEm, and Namechk are all viable tools for simultaneously checking handle availability across 100+ platforms in a single search.</p>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── 3. Payment ── -->
+    <div class="content-section" id="payment">
+      <span class="section-num">Section 03</span>
+      <h2>Payment <span>Platforms</span></h2>
+
+      <p>CivicCircle's revenue model operates across two distinct transaction types: (1) SaaS subscription fees billed to municipal government clients on an annual or multi-year contract basis (B2G), and (2) potentially freemium-to-premium conversion payments from individual residents who upgrade to enhanced platform features (C). These two transaction types have very different payment infrastructure requirements and risk profiles.</p>
+
+      <div class="payment-grid">
+
+        <div class="payment-card">
+          <div class="payment-name">Stripe</div>
+          <div class="payment-role">Primary Payment Processor — SaaS &amp; Consumer</div>
+          <p>Stripe is CivicCircle's recommended primary payment processor. Stripe's infrastructure is purpose-built for subscription-based SaaS billing, offering recurring billing management, proration handling, trial period logic, invoice generation, and webhook integration with CRM and accounting systems. For the B2G revenue stream, Stripe supports ACH bank transfers and wire transfer options — critical because most municipal governments are legally prohibited from paying by credit card for contracts above a certain dollar threshold and operate on net-30 to net-90 payment cycles. Stripe's built-in support for ACH direct debit (via Stripe's "Bacs" and "ACH Debit" payment methods) makes it compatible with government procurement payment norms. For the consumer-facing premium tier, Stripe's card payment processing and Apple Pay/Google Pay integrations provide the frictionless checkout experience that resident-users expect from mobile applications. Stripe's developer API documentation is also the most comprehensive in the industry, reducing integration complexity for the engineering team.</p>
+        </div>
+
+        <div class="payment-card">
+          <div class="payment-name">Bill.com</div>
+          <div class="payment-role">Government Accounts Payable Integration</div>
+          <p>For larger municipal contracts — particularly those exceeding $10,000/year — CivicCircle should integrate with Bill.com (now BILL), which is widely used by government finance departments and accounts payable teams for managing vendor invoices, approval workflows, and ACH disbursements. Many municipalities require vendors to be registered in their AP systems, and Bill.com's widespread adoption in local government financial operations makes it a pragmatic integration priority. Bill.com handles invoice routing, multi-approver workflows, and audit trails in a format that is familiar to government finance staff, reducing friction in the procurement and payment process for municipal clients.</p>
+        </div>
+
+        <div class="payment-card">
+          <div class="payment-name">Stripe Tax / Avalara</div>
+          <div class="payment-role">Tax Compliance Layer</div>
+          <p>SaaS tax compliance is one of the most complex and rapidly changing areas of business law, particularly for platforms that may operate across multiple U.S. states with varying digital services tax regimes (economic nexus rules, marketplace facilitator laws). CivicCircle should deploy Stripe Tax (Stripe's built-in tax calculation engine) from launch to automate sales tax calculation, collection, and remittance. As the platform scales and transaction volume grows, migrating to Avalara — the enterprise-grade tax compliance platform used by most mid-market and enterprise SaaS companies — provides greater coverage depth and state-specific audit support. Government-to-business invoices may qualify for state tax exemptions, which both platforms are equipped to manage through exemption certificate processing.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── 4. Other Digital Resources ── -->
+    <div class="content-section" id="tools">
+      <span class="section-num">Section 04</span>
+      <h2>Additional Digital Resources <span>&amp; Tools</span></h2>
+
+      <p>Beyond the domain, social media, and payment infrastructure, CivicCircle's operational model requires a suite of integrated digital tools spanning customer relationship management, email marketing, website functionality, customer support, and internal collaboration. The tools outlined below represent the core digital stack for the venture's initial operating period.</p>
+
+      <div class="tools-grid">
+
+        <div class="tool-card">
+          <span class="category">CRM</span>
+          <h4>HubSpot CRM</h4>
+          <p>HubSpot's free-tier CRM will manage CivicCircle's government prospect pipeline, tracking outreach to city managers, IT directors, and procurement officials across target municipalities. The CRM records contact history, stages deals through a custom municipal sales pipeline, and integrates with email for automated follow-up sequences. As the sales motion scales, HubSpot's Sales Hub provides sequence automation, meeting scheduling, and deal forecasting tools built for B2B (and B2G) sales cycles. HubSpot's Marketing Hub integration also enables attribution tracking, connecting marketing touchpoints to closed government contracts.</p>
+        </div>
+
+        <div class="tool-card blue">
+          <span class="category">Email Marketing</span>
+          <h4>Mailchimp</h4>
+          <p>Mailchimp manages CivicCircle's outbound email marketing to both segments: government prospect nurture sequences (featuring civic tech case studies, platform updates, and event ROI data for municipal decision-makers) and resident user communications (platform updates, featured community events, and civic engagement tips). Mailchimp's audience segmentation allows CivicCircle to maintain separate lists for government contacts and consumer users with appropriately tailored messaging. Mailchimp's transactional email add-on (Mandrill) handles platform-triggered notifications, such as event alerts and account confirmations.</p>
+        </div>
+
+        <div class="tool-card gold">
+          <span class="category">Customer Support</span>
+          <h4>Intercom</h4>
+          <p>Intercom serves CivicCircle's dual-audience customer support function, delivering an in-app chat widget for resident users encountering platform issues and a help-desk ticketing system for municipal administrator support requests. Intercom's product tours and in-app onboarding flows are particularly valuable for CivicCircle's municipal clients, who may include staff with limited SaaS experience — guided onboarding reduces churn and shortens time-to-value for new government partners. The platform's chatbot functionality can handle Tier 1 resident inquiries (event lookup, account issues) without human intervention, keeping support costs low in the early operational period.</p>
+        </div>
+
+        <div class="tool-card navy">
+          <span class="category">Analytics</span>
+          <h4>Google Analytics 4 + Mixpanel</h4>
+          <p>Google Analytics 4 (GA4) tracks website traffic, user acquisition sources, geographic distribution of visitors, and conversion funnel performance for the venture website. Mixpanel, a product analytics platform, tracks in-app behavior within the CivicCircle platform itself — event discovery patterns, feature adoption rates, resident retention, and the behavioral signals that predict churn or upgrade intent. Together, GA4 and Mixpanel give the team a complete picture of both marketing performance and product-level engagement, enabling data-informed decisions about feature prioritization and go-to-market adjustments.</p>
+        </div>
+
+        <div class="tool-card">
+          <span class="category">Website CMS &amp; Hosting</span>
+          <h4>Webflow + AWS</h4>
+          <p>The CivicCircle marketing website (the venture website, distinct from this course-assignment site) will be built and managed in Webflow — a no-code CMS that allows the marketing team to publish content, update landing pages, and manage the blog without engineering support. The platform application itself (the event-aggregation interface) will be hosted on Amazon Web Services (AWS), specifically utilizing Elastic Beanstalk for application hosting, S3 for asset storage, and RDS (PostgreSQL) for the structured municipal event database. AWS's FedRAMP authorization programs are particularly important for government clients who may require vendor data to be stored in FedRAMP-compliant environments.</p>
+        </div>
+
+        <div class="tool-card blue">
+          <span class="category">Internal Collaboration</span>
+          <h4>Notion + Slack</h4>
+          <p>Notion serves as CivicCircle's internal knowledge base — housing the product roadmap, government partner documentation, meeting notes, operational playbooks, and onboarding materials. Slack handles real-time team communication and integrates with HubSpot, GitHub, and Intercom to surface CRM updates, product deployments, and support escalations in the appropriate team channels. Both tools are standard in the early-stage SaaS operating environment and require minimal configuration overhead at the team sizes anticipated for CivicCircle's initial operating period.</p>
+        </div>
+
+        <div class="tool-card gold">
+          <span class="category">Email Infrastructure</span>
+          <h4>Google Workspace</h4>
+          <p>CivicCircle will operate all internal and external email communications through Google Workspace (Gmail) under the <code>@civiccircle.io</code> domain. Google Workspace provides professional email addresses for all team members and government-facing communications (e.g., <code>partnerships@civiccircle.io</code>, <code>support@civiccircle.io</code>), Google Drive for document management, Google Meet for video conferencing with municipal clients, and Google Calendar for scheduling. Custom domain email is a minimum credibility requirement for government-facing sales and partnership communications; free consumer email addresses (Gmail, Outlook personal) are disqualifying in formal procurement contexts.</p>
+        </div>
+
+        <div class="tool-card navy">
+          <span class="category">Government Data Integration</span>
+          <h4>Open311 / Socrata API</h4>
+          <p>CivicCircle's core technical function — aggregating local civic events from municipal sources — requires integration with government data portals and open standards APIs. Open311 is a standardized municipal API for government service requests and open data, and Socrata (now Tyler Data &amp; Insights) is the dominant open data platform used by city and county governments. CivicCircle will integrate with both to ingest structured civic event data from partner municipalities' existing open data infrastructure, reducing the data-entry burden on municipal staff and enabling near-real-time event synchronization. These integrations are built on top of the platform's core API layer (hosted on AWS API Gateway) and represent the primary technical differentiator of the platform's data aggregation engine.</p>
+        </div>
+
+        <div class="tool-card">
+          <span class="category">Legal &amp; Compliance</span>
+          <h4>Clerky + Ironclad</h4>
+          <p>Clerky provides CivicCircle's legal document infrastructure for standard startup legal operations — incorporating the entity, issuing equity, onboarding contractors, and preparing SAFE or equity agreements for investors. Ironclad, a digital contract management platform, manages the municipal partnership agreements and SaaS subscription contracts that govern CivicCircle's B2G relationships. Government contracts require formal execution, version control, and audit trails that consumer-grade e-signature tools (such as DocuSign's consumer tier) do not adequately provide; Ironclad's workflow builder supports multi-party approval processes consistent with municipal procurement requirements. Together, these platforms ensure CivicCircle maintains legal and contractual hygiene from inception.</p>
+        </div>
+
+      </div>
+
+      <div class="callout" style="margin-top:2rem;">
+        <p><strong>Stack Philosophy:</strong> The digital tool stack outlined above was selected against three criteria: (1) fit-for-purpose functionality for CivicCircle's specific B2G2C operating model; (2) scalability from pre-launch through Series A-stage growth without requiring a full platform migration; and (3) government-procurement compatibility — recognizing that municipal clients and investors will scrutinize the maturity and security posture of CivicCircle's digital infrastructure as part of their due diligence. Each tool in the stack either offers a free tier for the bootstrapped early stage or a startup-discount program that minimizes burn during the pre-revenue period.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <strong>CivicCircle</strong> &nbsp;·&nbsp; Connecting Communities. Empowering Municipalities. &nbsp;·&nbsp; © 2024 CivicCircle. All rights reserved.
+  </footer>
+
+</body>
+</html>

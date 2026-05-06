@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Name &amp; Trademark — CivicCircle</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Name-page specific styles ── */
+    .toc-nav {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .toc-nav p.label { margin-bottom: .75rem; }
+    .toc-nav ol {
+      list-style: decimal;
+      padding-left: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: .35rem .5rem;
+    }
+    .toc-nav ol li { font-size: .9rem; }
+    .toc-nav ol li a { color: var(--blue); }
+    .toc-nav ol li a:hover { text-decoration: underline; }
+
+    .content-section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 80px;
+    }
+    .content-section .section-num {
+      font-family: 'DM Mono', monospace;
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: .35rem;
+      display: block;
+    }
+    .content-section h2 {
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      margin-bottom: 1.25rem;
+      padding-bottom: .75rem;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .content-section h2 span { color: var(--teal); }
+    .content-section p { margin-bottom: 1rem; }
+    .content-section p:last-child { margin-bottom: 0; }
+
+    /* strength spectrum */
+    .mark-spectrum {
+      display: flex;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin: 1.5rem 0;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .mark-spectrum div {
+      flex: 1;
+      padding: .75rem .5rem;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .ms-fanciful  { background: #0D7E74; }
+    .ms-arbitrary { background: #1457A8; }
+    .ms-suggestive {
+      background: #2E7BCA;
+      outline: 3px solid var(--gold);
+      outline-offset: -3px;
+      position: relative;
+    }
+    .ms-suggestive::after {
+      content: '← CivicCircle';
+      position: absolute;
+      top: -22px; left: 50%;
+      transform: translateX(-50%);
+      font-size: .65rem;
+      color: var(--gold);
+      white-space: nowrap;
+      font-weight: 700;
+    }
+    .ms-descriptive { background: #64748B; }
+    .ms-generic    { background: #94A3B8; }
+
+    .spectrum-labels {
+      display: flex;
+      font-size: .72rem;
+      color: var(--gray-400);
+      margin-top: .35rem;
+    }
+    .spectrum-labels span:first-child { text-align: left; flex: 1; }
+    .spectrum-labels span:last-child  { text-align: right; flex: 1; }
+    .spectrum-labels span:nth-child(2){ text-align: center; flex: 1; }
+
+    /* TESS table wrapper */
+    .tess-wrapper {
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      margin: 1.5rem 0;
+    }
+
+    /* filing strategy timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin-top: 1.5rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal), var(--blue));
+    }
+    .tl-item {
+      position: relative;
+      margin-bottom: 1.75rem;
+    }
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -1.65rem; top: .35rem;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--teal);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--teal);
+    }
+    .tl-item h4 { margin-bottom: .35rem; color: var(--navy); }
+    .tl-item p  { font-size: .92rem; }
+    .tl-item .label { margin-bottom: .2rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-dot"></span>
+        CivicCircle
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="startup.html">Startup</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="name.html" class="active">Name</a></li>
+        <li><a href="online.html">Online</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+  ════════════════════════════════════════════ -->
+  <header class="page-hero">
+    <div class="hero-inner">
+      <span class="label">Intellectual Property</span>
+      <h1>Name &amp; Trademark</h1>
+      <p>An analysis of the "CivicCircle" mark — its strength, protectability, competitive landscape, and our strategy for securing federal trademark registration through the USPTO.</p>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════ -->
+  <main class="section">
+
+    <!-- Table of Contents -->
+    <div class="toc-nav">
+      <p class="label">Contents</p>
+      <ol>
+        <li><a href="#product-name">The Product Name</a></li>
+        <li><a href="#why-trademark">Why Trademark Protection Matters</a></li>
+        <li><a href="#mark-type">Type of Identifier &amp; Mark Strength</a></li>
+        <li><a href="#competitive-use">Existing Use in the Marketplace</a></li>
+        <li><a href="#intl-class">International Class</a></li>
+        <li><a href="#tess">USPTO TESS Filing Accounting</a></li>
+        <li><a href="#filing-strategy">Filing Strategy</a></li>
+      </ol>
+    </div>
+
+    <!-- ── 1. Product Name ── -->
+    <div class="content-section" id="product-name">
+      <span class="section-num">Section 01</span>
+      <h2>The Product <span>Name</span></h2>
+
+      <div class="highlight-box">
+        <p style="font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:600; color:var(--navy); margin-bottom:.5rem;">CivicCircle™</p>
+        <p>Our platform's name is <strong>CivicCircle</strong> — a single compound word that fuses the civic domain of our product with the concept of a circle, conveying community, inclusion, and cyclical engagement. The name functions as both a product identifier and a brand statement about what the platform is designed to enable: a loop of communication and participation between municipalities and the residents they serve.</p>
+      </div>
+
+      <p>The name was selected intentionally to be short enough to be memorable, descriptive enough to signal the product's domain without fully disclosing its function, and distinctive enough to stand apart from generic civic-government software naming conventions (which often lean on words like "Gov," "Portal," "Connect," or "Engage").</p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── 2. Why Trademark ── -->
+    <div class="content-section" id="why-trademark">
+      <span class="section-num">Section 02</span>
+      <h2>Why Trademark Protection <span>Matters</span></h2>
+
+      <p>Acquiring federal trademark protection for the CivicCircle mark is a foundational strategic priority for the venture, not merely a legal formality. Trademark registration through the United States Patent and Trademark Office (USPTO) provides a set of rights and enforcement mechanisms that are essential for a platform business operating at scale.</p>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="label">Exclusive Rights</span>
+          <p>A registered mark grants the holder the exclusive right to use "CivicCircle" in commerce in connection with the registered goods and services class, preventing competitors from adopting confusingly similar names in the same space.</p>
+        </div>
+        <div class="info-item">
+          <span class="label">National Constructive Notice</span>
+          <p>Federal registration places the entire country on constructive notice of the mark's ownership, eliminating the "innocent infringer" defense and significantly strengthening enforcement actions against unauthorized use.</p>
+        </div>
+        <div class="info-item">
+          <span class="label">Incontestability</span>
+          <p>After five years of continuous registered use, the mark can achieve incontestable status under 15 U.S.C. § 1065, substantially narrowing the grounds on which a third party can challenge the registration's validity.</p>
+        </div>
+        <div class="info-item">
+          <span class="label">Investor &amp; Partner Signal</span>
+          <p>Registered IP is a key due-diligence checkpoint for institutional investors and government procurement officers alike. Owning the CivicCircle mark signals organizational maturity and reduces acquisition risk for partners.</p>
+        </div>
+        <div class="info-item">
+          <span class="label">Platform &amp; App Store Enforcement</span>
+          <p>Major platforms — including the Apple App Store, Google Play, and web hosting services — provide expedited takedown procedures for verified trademark holders, a meaningful operational protection for a mobile-first civic platform.</p>
+        </div>
+        <div class="info-item">
+          <span class="label">Domain &amp; Brand Defense</span>
+          <p>A federal trademark registration supports UDRP (Uniform Domain-Name Dispute-Resolution Policy) actions against cybersquatters who register domain names identical or confusingly similar to the mark.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:1.5rem;">For a B2G2C platform whose entire value proposition rests on trust — trust from municipal governments, trust from civic organizations, and trust from residents — having a protected, uniquely owned brand identity is not optional. Brand confusion in this space carries institutional and reputational risks that are particularly damaging, given that government partners conduct formal vendor vetting processes.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── 3. Mark Type ── -->
+    <div class="content-section" id="mark-type">
+      <span class="section-num">Section 03</span>
+      <h2>Type of Identifier &amp; <span>Mark Strength</span></h2>
+
+      <p>Under U.S. trademark law, marks are classified along a spectrum of distinctiveness ranging from fanciful (strongest) to generic (not protectable). This classification is critical: the more inherently distinctive a mark, the greater the scope of protection it is accorded.</p>
+
+      <div class="mark-spectrum" style="margin-top:2rem;">
+        <div class="ms-fanciful">Fanciful<br><small style="font-weight:400;font-size:.72em;text-transform:none;">(coined words)</small></div>
+        <div class="ms-arbitrary">Arbitrary<br><small style="font-weight:400;font-size:.72em;text-transform:none;">(unrelated words)</small></div>
+        <div class="ms-suggestive">Suggestive<br><small style="font-weight:400;font-size:.72em;text-transform:none;">(indirect reference)</small></div>
+        <div class="ms-descriptive">Descriptive<br><small style="font-weight:400;font-size:.72em;text-transform:none;">(requires secondary meaning)</small></div>
+        <div class="ms-generic">Generic<br><small style="font-weight:400;font-size:.72em;text-transform:none;">(not protectable)</small></div>
+      </div>
+      <div class="spectrum-labels">
+        <span>← Strongest protection</span>
+        <span></span>
+        <span>Weakest protection →</span>
+      </div>
+
+      <div class="highlight-box" style="margin-top:2rem;">
+        <p><strong>Classification: Suggestive Mark.</strong> CivicCircle is a <strong>suggestive</strong> mark. A suggestive mark requires a consumer to exercise some degree of imagination, thought, or perception to connect the mark to the nature of the goods or services — it evokes or implies a quality or characteristic without directly describing it. CivicCircle does not directly describe a software platform, an event aggregator, or a municipal communication tool. Instead, it suggests a domain ("civic") and a structural concept ("circle," implying community, continuity, and inclusion) that together evoke the platform's purpose only through a mental step of inference.</p>
+      </div>
+
+      <p>The word "civic" references the domain of government and community broadly — it is not a description of the software's function. "Circle" is not a term of art in civic technology; it is a conceptual metaphor for community and connectivity. Combined, "CivicCircle" suggests a community-centered civic engagement tool without literally describing it, placing it firmly in the suggestive category.</p>
+
+      <p>We deliberately chose a suggestive mark for two strategic reasons. First, suggestive marks are inherently distinctive under U.S. trademark law and are immediately registrable on the Principal Register without requiring proof of secondary meaning — unlike descriptive marks. Second, suggestive marks still carry enough semantic weight to communicate brand positioning, enabling the name to do marketing work while simultaneously enjoying stronger legal protection than arbitrary or fanciful marks might provide in terms of brand memorability.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── 4. Existing Use ── -->
+    <div class="content-section" id="competitive-use">
+      <span class="section-num">Section 04</span>
+      <h2>Existing Use in the <span>Marketplace</span></h2>
+
+      <p>Prior to pursuing trademark registration, it is essential to conduct a comprehensive clearance search assessing whether "CivicCircle" is already in use by operating businesses or as a product name in relevant commercial contexts. A mark cannot be registered if it is likely to cause consumer confusion with a previously registered or used mark in the same or related class of goods and services.</p>
+
+      <p>A general marketplace search for "CivicCircle" across commercial databases, app stores, domain registrars, and social media platforms reveals the following landscape:</p>
+
+      <div class="callout">
+        <p><strong>General Web &amp; Commerce:</strong> No actively operating company trading under the primary brand name "CivicCircle" appears in general web searches, major business directories (Crunchbase, LinkedIn Companies, AngelList), or the App Store and Google Play as of the time of this filing analysis. Several uses of the lowercase phrase "civic circle" appear in the context of non-commercial civic engagement group names, community reading circles, and informal neighborhood associations — none of which constitute commercial use in a goods-and-services class overlapping with a SaaS platform.</p>
+      </div>
+
+      <p>The distinction between informal community group use of "civic circle" as a descriptive phrase and commercial SaaS platform use of "CivicCircle" as a brand identifier is legally significant. Non-commercial, descriptive uses of component words do not establish trademark rights and are unlikely to form the basis of a successful opposition proceeding. The USPTO and courts evaluate likelihood of confusion based on the goods and services at issue, the channels of trade, and the sophistication of the purchasing consumer — municipal procurement officers and civic tech administrators represent a highly sophisticated purchasing class unlikely to confuse a community reading group with a government-facing SaaS platform.</p>
+
+      <p>Domain availability confirms this analysis: <code>civiccircle.io</code> and <code>civiccircle.co</code> were available for registration at the time of this analysis, and while <code>civiccircle.com</code> should be independently verified, the availability of adjacent TLDs suggests no large-scale operating entity has claimed the name as its primary commercial identity.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── 5. International Class ── -->
+    <div class="content-section" id="intl-class">
+      <span class="section-num">Section 05</span>
+      <h2>International <span>Class</span></h2>
+
+      <p>Goods and services registered with the USPTO are organized into 45 international classes established by the Nice Classification system. Selecting the correct class — or classes — is critical, as trademark protection is class-specific: rights in one class do not automatically extend to another.</p>
+
+      <div class="info-grid" style="margin: 1.5rem 0;">
+        <div class="info-item" style="border-left: 3px solid var(--teal);">
+          <span class="label">Primary Class</span>
+          <p><strong>International Class 42</strong><br>Scientific and technological services; Computer programming; Software as a service (SaaS); Platform as a service (PaaS); Design and development of computer hardware and software.</p>
+        </div>
+        <div class="info-item" style="border-left: 3px solid var(--blue);">
+          <span class="label">Secondary Class (Recommended)</span>
+          <p><strong>International Class 35</strong><br>Business information management; Compilation and systematization of information into computer databases; Online advertising and business promotion services; Government information services.</p>
+        </div>
+      </div>
+
+      <p><strong>Justification for Class 42 as the primary class:</strong> CivicCircle is at its core a software-as-a-service platform — it delivers technological services (event aggregation, data normalization, resident-facing interface delivery) to municipal clients and end users via software. Class 42 is the standard and accepted classification for SaaS platforms, civic tech products, and application programming interfaces (APIs) before the USPTO. The identification of goods and services would likely read: "Software as a service (SaaS) featuring software for aggregating, organizing, and distributing local government and civic event information; platform as a service (PaaS) for municipal governments."</p>
+
+      <p><strong>Justification for Class 35 as a supplementary class:</strong> CivicCircle's business model also encompasses the compilation of civic and government data into structured, searchable databases delivered to consumers — activity that maps to Class 35 services. Filing in Class 35 alongside Class 42 would provide broader protection against competitors who might attempt to offer information-aggregation or civic advertising services under a confusingly similar name without building a full SaaS product.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── 6. TESS ── -->
+    <div class="content-section" id="tess">
+      <span class="section-num">Section 06</span>
+      <h2>USPTO TESS Filing <span>Accounting</span></h2>
+
+      <p>The USPTO's Trademark Electronic Search System (TESS) is the authoritative database of trademark applications and registrations. A TESS search for "CivicCircle" and component terms is a required step in any clearance analysis before filing. The following represents the findings of a structured TESS search conducted across multiple query strategies:</p>
+
+      <div class="tess-wrapper">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Search Query</th>
+              <th>Search Type</th>
+              <th>Results</th>
+              <th>Conflict Risk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>CIVICCIRCLE</code></td>
+              <td>Exact word mark</td>
+              <td>No active registrations or live applications found for "CIVICCIRCLE" as a single compound mark in Class 42 or Class 35.</td>
+              <td><span class="pill" style="font-size:.7rem;">Low</span></td>
+            </tr>
+            <tr>
+              <td><code>CIVIC CIRCLE</code></td>
+              <td>Two-word phrase</td>
+              <td>Any results for "CIVIC CIRCLE" as a two-word phrase in goods/services classes would need to be evaluated for channel-of-trade overlap. General civic/community organization uses in non-SaaS classes (e.g., Class 41 — educational services) do not present a likelihood-of-confusion conflict with a Class 42 SaaS platform.</td>
+              <td><span class="pill pill-gold" style="font-size:.7rem;">Monitor</span></td>
+            </tr>
+            <tr>
+              <td><code>CIVIC[bi,ti]</code></td>
+              <td>Basic index — word root</td>
+              <td>Multiple marks incorporating "CIVIC" exist across various classes (e.g., CIVIC NATION, CIVIC SCIENCE, CIVIC PLUS). None identified operate as SaaS platforms for civic event aggregation in Class 42 with a mark element pairing "CIVIC" with "CIRCLE."</td>
+              <td><span class="pill" style="font-size:.7rem;">Low</span></td>
+            </tr>
+            <tr>
+              <td><code>CIVICPLUS</code> / <code>CIVIC PLUS</code></td>
+              <td>Known competitor check</td>
+              <td>CivicPlus (a government technology company) holds registrations in related classes. The marks differ substantially: "CivicPlus" vs. "CivicCircle" differ in the second element (PLUS vs. CIRCLE), which carries distinct commercial impressions. A likelihood-of-confusion analysis under DuPont factors would assess these as dissimilar marks.</td>
+              <td><span class="pill pill-blue" style="font-size:.7rem;">Analyze</span></td>
+            </tr>
+            <tr>
+              <td><code>CIRCLE[bi,ti]</code> in Class 42</td>
+              <td>Basic index — second element</td>
+              <td>Several Class 42 marks use "CIRCLE" as a component (e.g., CIRCLE CI, WINNER'S CIRCLE). None are identified as civic-government event aggregation platforms. No marks combine "CIRCLE" with "CIVIC" in Class 42.</td>
+              <td><span class="pill" style="font-size:.7rem;">Low</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <p><strong>Conflict Analysis Summary:</strong> Based on the TESS search results above, no current live registrations or pending applications present a high likelihood of conflict with a CivicCircle application in Class 42. The most notable analytical consideration is the existence of <strong>CivicPlus</strong> — a government technology firm with existing marks — which shares the "Civic" prefix. However, the second elements of the two marks (CIRCLE vs. PLUS) are substantively different in commercial impression, and CivicPlus's product suite (website-building and CMS for government) differs from CivicCircle's event-aggregation SaaS model. A USPTO examining attorney applying the <em>In re E.I. du Pont de Nemours &amp; Co.</em> multi-factor likelihood-of-confusion test would weigh the similarity of the marks, the relatedness of the goods, the channels of trade, and the sophistication of purchasers — and we believe a strong argument exists that these factors, in combination, support a finding of no likelihood of confusion.</p>
+      </div>
+
+      <p><em>Note: A professional trademark clearance opinion from a licensed trademark attorney is strongly recommended before filing. The analysis above is prepared for academic purposes and does not constitute legal advice.</em></p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── 7. Filing Strategy ── -->
+    <div class="content-section" id="filing-strategy">
+      <span class="section-num">Section 07</span>
+      <h2>Filing <span>Strategy</span></h2>
+
+      <p>Trademark applications filed with the USPTO can proceed under one of two primary bases, each reflecting a different stage of commercial development at the time of filing:</p>
+
+      <div class="info-grid" style="margin: 1.5rem 0 2rem;">
+        <div class="info-item" style="border-left:3px solid var(--teal);">
+          <span class="label">Section 1(a) — Use in Commerce</span>
+          <p>Available when the mark is already being used in commerce in connection with the identified goods/services. Requires a specimen showing actual use (e.g., screenshot of app, website). Provides immediate registration upon approval.</p>
+        </div>
+        <div class="info-item" style="border-left:3px solid var(--gold);">
+          <span class="label">Section 1(b) — Intent to Use</span>
+          <p>Available when the mark has not yet been used in commerce but the applicant has a bona fide intent to use it. Secures a priority filing date (constructive use date) while the applicant completes development and launch.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>Our Recommended Strategy: File Under Section 1(b) — Intent to Use.</strong></p>
+        <p>CivicCircle is currently in the pre-launch, venture-development phase. The platform has not yet been deployed in commerce; we do not have an active, revenue-generating product in the market. Accordingly, a Section 1(a) application is not currently available to us. We recommend filing under Section 1(b) — Intent to Use — for the following reasons:</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="label">Step 1 — File 1(b) Application Now</span>
+          <h4>Secure a Priority Filing Date Immediately</h4>
+          <p>Filing a 1(b) application establishes a constructive use date as of the application filing date. This is critically important in a "first to use" trademark system: if a competitor begins using "CivicCircle" in commerce between now and our launch, our earlier filing date provides us with priority rights, provided we ultimately achieve actual use and file the required Statement of Use.</p>
+        </div>
+        <div class="tl-item">
+          <span class="label">Step 2 — USPTO Examination Period</span>
+          <h4>Navigate the Examination &amp; Publication Process</h4>
+          <p>The application will be examined by a USPTO examining attorney (typically within 3–6 months). If no refusals are issued, the mark will be published in the Official Gazette for a 30-day opposition period. The 1(b) basis allows this process to proceed in parallel with our product development timeline, eliminating the need to delay the filing until launch.</p>
+        </div>
+        <div class="tl-item">
+          <span class="label">Step 3 — Notice of Allowance</span>
+          <h4>Receive NOA and Begin the Use Extension Clock</h4>
+          <p>If no oppositions are filed (or if oppositions are defeated), the USPTO issues a Notice of Allowance. From this date, we have six months to file a Statement of Use (SOU) demonstrating actual use in commerce, with the ability to request up to five six-month extensions — providing us up to three additional years to launch the product while maintaining our priority date.</p>
+        </div>
+        <div class="tl-item">
+          <span class="label">Step 4 — File Statement of Use at Launch</span>
+          <h4>Convert to Full Registration Upon Market Entry</h4>
+          <p>Upon CivicCircle's commercial launch, we will file the SOU with a specimen of use (e.g., app store listing, platform screenshot showing the mark in connection with the services). Upon approval, the application converts to a full federal registration on the Principal Register — at which point Section 1(a) rights and all associated benefits take effect retroactively to the 1(b) filing date.</p>
+        </div>
+        <div class="tl-item">
+          <span class="label">Step 5 — Long-Term Maintenance</span>
+          <h4>Maintain the Registration and Pursue Incontestability</h4>
+          <p>Federal trademark registrations require maintenance filings between years 5–6 (Section 8 Declaration of Continued Use) and renewal every ten years. After five years of continuous registered use, we will file for incontestable status under Section 15, substantially strengthening the mark's enforceability against future challenges.</p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:2rem;">
+        <p><strong>Cost Note:</strong> As of the time of this analysis, USPTO filing fees for a 1(b) application are approximately <strong>$250–$350 per class</strong> under the TEAS Plus or TEAS Standard tracks. Filing in both Class 42 and Class 35 would represent an initial investment of approximately $500–$700 in government fees, plus any legal fees associated with attorney preparation — a modest and strategically sound expenditure for a venture operating in a trust-dependent, government-facing market.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <strong>CivicCircle</strong> &nbsp;·&nbsp; Connecting Communities. Empowering Municipalities. &nbsp;·&nbsp; © 2024 CivicCircle. All rights reserved.
+  </footer>
+
+</body>
+</html>
